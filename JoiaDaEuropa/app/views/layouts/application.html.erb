@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JoiaDaEuropa</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="row" style="text-align: center;">
+      <div class="col-md-3">
+        <%= link_to 'PT', '/?lang=pt' %>
+        <span>|</span>
+        <%= link_to 'EN', '/?lang=en' %>
+      </div>
+      <div class="col-md-6">
+        <img src="<%= asset_path 'logo.png' %>">
+      </div>
+      <div class="col-md-3">
+        <% if current_user %>
+          <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
+        <% else %>
+            <%= link_to 'Sign In', new_user_session_path %>
+        <% end %>
+      </div>
+    </header>
+
+    <%= yield %>
+
+    <% if notice %>
+    <div class="alert alert-info" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= notice %>
+    </div>
+    <% end %>
+    <% if alert %>
+    <div class="alert alert-warning" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= alert %>
+    </div>
+    <% end %>
+  </body>
+</html>
