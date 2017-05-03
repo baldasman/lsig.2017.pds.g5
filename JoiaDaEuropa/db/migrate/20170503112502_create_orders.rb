@@ -7,6 +7,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.decimal :total_value
 
       t.timestamps
-    end
+      end
+    add_reference :orders, references: :orders, foreign_key: true
   end
 end
