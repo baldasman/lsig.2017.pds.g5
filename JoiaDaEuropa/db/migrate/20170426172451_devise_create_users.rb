@@ -38,5 +38,16 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
+
+    # has_many association with orders
+    create_table :orders do |t|
+      t.belongs_to :users, index: true
+      t.text :description
+      t.datetime :order_date
+      t.datetime :delivery_date
+      t.decimal :total_value
+
+      t.timestamps
+    end
   end
 end
