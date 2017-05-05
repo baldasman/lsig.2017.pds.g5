@@ -6,6 +6,5 @@ class User < ApplicationRecord
   validates :password, confirmation: true
   has_many :orders
   has_one :order_file, through: :order
-  has_one :report, through: :order
 
 end
