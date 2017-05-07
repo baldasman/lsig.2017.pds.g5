@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-  skip_before_action :authenticateuser!
+  ## skip_before_action :authenticateuser!
 
   ## ao fazer o skip, a página fica pública. Neste file criamos as
   ## restantes páginas publicas (e.g.contacts, about us)
