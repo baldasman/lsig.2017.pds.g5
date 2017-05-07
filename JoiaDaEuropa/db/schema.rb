@@ -12,6 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20170505090202) do
 
+  create_table "order_files", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.binary   "type",       limit: 65535
+    t.string   "path"
+    t.text     "obs",        limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "order_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
@@ -19,14 +27,22 @@ ActiveRecord::Schema.define(version: 20170505090202) do
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "description",                                   limit: 65535
+    t.text     "description",     limit: 65535
     t.datetime "order_date"
     t.datetime "delivery_date"
-    t.decimal  "total_value",                                                 precision: 10
-    t.datetime "created_at",                                                                 null: false
-    t.datetime "updated_at",                                                                 null: false
-    t.integer  "{:references=>:orders, :foreign_key=>true}_id"
-    t.index ["{:references=>:orders, :foreign_key=>true}_id"], name: "index_orders_on_{:references=>:orders, :foreign_key=>true}_id", using: :btree
+    t.decimal  "total_value",                   precision: 2
+    t.text     "reason",          limit: 65535
+    t.text     "obs",             limit: 65535
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.integer  "user_id"
+    t.integer  "order_status_id"
+    t.integer  "order_file_id"
+    t.integer  "reference_id"
+    t.index ["order_file_id"], name: "index_orders_on_order_file_id", using: :btree
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
+    t.index ["reference_id"], name: "index_orders_on_reference_id", using: :btree
+    t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
