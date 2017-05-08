@@ -6,6 +6,7 @@
     margin: 8px 0;
     display: block;
     border: 1px solid #ccc;
+    border-radius: 8px;
     box-sizing: border-box;
   }
 
@@ -16,6 +17,7 @@
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
     width: 100%;
   }
@@ -127,7 +129,7 @@
 
 <div id="id01" class="modal">
 
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="<%= user_session_path %>">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="<%= asset_path 'img_avatar2.png' %>" alt="Avatar" class="avatar">
