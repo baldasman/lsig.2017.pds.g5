@@ -1,15 +1,16 @@
+<div class="container">
 <header class="navbar navbar-fixed-top navbar-inverse bg-inverse">
   <div class="navbar-inner">
     <div class="container-fluid">
       <div class="navbar-header">
         <!--a class="navbar-brand"><= link_to "Joia da Europa", home_index_path, id: "logo" %></a-->
-        <img src="<%= asset_path 'logo.png' %>">
+        <img class="navbar-brand" src="<%= asset_path 'logo.png' %>">
         <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <form class="navbar-form navbar-left">
+        <form class="navbar-form">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search">
             <div class="input-group-btn">
@@ -43,9 +44,9 @@
           <% else %>
               <li><span class="glyphicon glyphicon-log-in"> <%= link_to 'Log In', new_user_session_path %> </span></li>
           <% end %>
-          <li class="button"></li>
         </ul>
       </nav>
     </div>
   </div>
 </header>
+</div>
