@@ -4,15 +4,21 @@ class ClientAreaController < ApplicationController
 
   def index
     @account = current_user
-    @order = Order.where(:order_statuses => :id)
+    @order = Order.all
   end
 
   def new_order
-
+    @order = Order.new
   end
 
   def save_order
-    @order = order
+    @order = current_user.orders.build(orders_params)    # Not the final implementation!
+    if @order.save
+      flash[:success] = "Your order was submited successfully!"
+      redirect_to
+    else
+      render 'home/index'
+    end
   end
 
 end

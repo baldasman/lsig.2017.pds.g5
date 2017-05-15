@@ -132,18 +132,7 @@
       .dropdown-menu li a:hover {
         background-color: red !important;
       }
-      footer {
-        background-color: #2d2d30;
-        color: #f5f5f5;
-        padding: 32px;
-      }
-      footer a {
-        color: #f5f5f5;
-      }
-      footer a:hover {
-        color: #777;
-        text-decoration: none;
-      }
+
       .form-control {
         border-radius: 0;
       }
@@ -165,10 +154,10 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#myPage">Home</a></li>
-          <li><a href="#band">Quem Somos</a></li>
-          <li><a href="#tour">Missão</a></li>
-          <li><a href="#contact">Contactos</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contacts">Contacts</a></li>
           </li>
           <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
         </ul>
@@ -216,9 +205,10 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <!-- Container (The Band Section) -->
-  <div id="band" class="container text-center">
-    <h3>Quem somos?</h3>
+  <hr>
+  <!-- Container (The Joia da Europa Section) -->
+  <div id="about" class="container text-center">
+    <h3>About Us</h3>
     <p>Em 2006, ano de novas oportunidades e desafios, António Bento Da Costa Ferreira inicia-se por conta própria, criando a empresa Jóia Da Europa, que se dedica inteiramente à fabricação de calçado.
       Jóia da Europa, é mais um dos casos de sucesso nacional e internacional, isto porque a inovação e a qualidade dos seus produtos é difícil de encontrar. Lentamente, ano após ano, esta empresa tem crescido, e não põe de parte qualquer desafio vindo à sua direcção. Para esta empresa tudo é possível.
       Ao longo destes anos, Jóia da Europa tem feito apostas ao nível de novas tecnologias, tanto em máquinas, como em programas informáticos, o que faz com que exista uma margem bastante reduzida de erro, e permite à empresa dar resposta a todas as propostas que lhe sejam submetidas, nos prazos subordinados.
@@ -226,9 +216,10 @@
       Se procura qualidade, inovação, transformação, diferenciação de produtos, venha conhecer a nossa empresa, porque aqui encontra tudo o que precisa..</p>
     <br>
   </div>
-  <!-- Container (TOUR Section) -->
-  <div id="tour" class="container text-center">
-    <h3>Missão</h3>
+  <hr>
+  <!-- Container (Mission Section) -->
+  <div id="mission" class="container text-center">
+    <h3>Mission</h3>
     <p>Uma empresa não se define pelo nome que tem, define-se pelo esforço e trabalho despendido por todos aqueles que fazem parte dela, os recursos humanos, fornecedores, clientes e todos os outros colaboradores são necessários para o sucesso de qualquer empresa, e Jóia da Europa conta com a ajuda de todos.
       A nossa missão centraliza-se em:
       Atender às necessidades de todos os nossos clientes, aperfeiçoando sempre os nossos produtos e serviços.
@@ -270,10 +261,10 @@
       </div>
     </div>
   </div>
-</div>
+  <hr>
 <!-- Container (Contact Section) -->
-<div id="contact" class="container">
-  <h3 class="text-center">Contactos</h3>
+<div id="contacts" class="container">
+  <h3 class="text-center">Contacts</h3>
   <p class="text-center"><em>Formulário de Contactos!</em></p>
   <div class="row">
     <div class="col-md-4">
@@ -285,21 +276,22 @@
     <div class="col-md-8">
       <div class="row">
         <div class="col-sm-6 form-group">
-          <input class="form-control" id="nome" name="nome" placeholder="Nome" type="text" required>
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
         </div>
         <div class="col-sm-6 form-group">
           <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
         </div>
       </div>
-      <textarea class="form-control" id="Comentarios" name="Comentarios" placeholder="Comentario" rows="5"></textarea>
+      <textarea class="form-control" id="comentaries" name="comentaries" placeholder="Comentaries" rows="5"></textarea>
       <br>
       <div class="row">
         <div class="col-md-12 form-group">
-          <button class="btn pull-right" type="submit">Enviar</button>
+          <button class="btn pull-right" type="submit">Send</button>
         </div>
       </div>
     </div>
   </div>
+</div>
   <!-- Add Google Maps -->
   <div id="googleMap"></div>
   <script>
@@ -316,13 +308,7 @@
   To use this code on your website, get a free API key from Google.
   Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
   -->
-  <!-- Footer -->
-  <footer class="text-center">
-    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </a><br><br>
-    <p>Joia da Europa Unipessoal.LDA @Webdesign by:  PDSG5</p>
-  </footer>
+
   <script>
       $(document).ready(function(){
           // Initialize Tooltip
