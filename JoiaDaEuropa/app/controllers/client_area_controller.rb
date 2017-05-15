@@ -1,4 +1,7 @@
 class ClientAreaController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     @account = current_user
   end
