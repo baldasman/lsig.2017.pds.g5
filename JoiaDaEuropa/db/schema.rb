@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 20170509153949) do
     t.text     "description",     limit: 65535
     t.datetime "order_date"
     t.datetime "delivery_date"
-    t.decimal  "total_value",                   precision: 2
+    t.decimal  "total_value",                   precision: 10
     t.text     "reason",          limit: 65535
     t.text     "obs",             limit: 65535
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.integer  "user_id"
     t.integer  "order_status_id"
     t.integer  "order_file_id"

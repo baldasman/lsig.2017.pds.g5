@@ -1,114 +1,180 @@
-<html lang="en">
-<head>
-  <title>Joia da Europa</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!--style>
-    body {
-      font: 400 15px/1.8 Lato, sans-serif;
-      color: #777;
-    }
-    h3, h4 {
-      margin: 10px 0 30px 0;
-      letter-spacing: 10px;
-      font-size: 20px;
-      color: #111;
-    }
-    .container {
-      padding: 80px 120px;
-    }
-
-    .carousel-inner img {
-      -webkit-filter: grayscale(90%);
-      filter: grayscale(90%); /* make all photos black and white */
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-    }
-    .carousel-caption h3 {
-      color: #fff !important;
-    }
-    @media (max-width: 600px) {
-      .carousel-caption {
-        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+<div class="container">
+  <head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Bootstrap Theme The Band</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        font: 400 15px/1.8 Lato, sans-serif;
+        color: #777;
       }
-    }
-
-    .bg-1 h3 {color: #fff;}
-    .bg-1 p {font-style: italic;}
-
-    .thumbnail p {
-      margin-top: 15px;
-      color: #555;
-    }
-    .btn {
-      padding: 10px 20px;
-      background-color: #333;
-      color: #f1f1f1;
-      border-radius: 0;
-      transition: .2s;
-    }
-    .btn:hover, .btn:focus {
-      border: 1px solid #333;
-      background-color: #fff;
-      color: #000;
-    }
-
-    .nav-tabs li a {
-      color: #777;
-    }
-
-    .navbar {
-      font-family: Montserrat, sans-serif;
-      margin-bottom: 0;
-      background-color: #2d2d30;
-      border: 0;
-      font-size: 11px !important;
-      letter-spacing: 4px;
-      opacity: 0.9;
-    }
-    .navbar li a, .navbar .navbar-brand {
-      color: #d5d5d5 !important;
-    }
-    .navbar-nav li a:hover {
-      color: #fff !important;
-    }
-    .navbar-nav li.active a {
-      color: #fff !important;
-      background-color: #29292c !important;
-    }
-    .navbar-inverse .navbar-toggle {
-      border-color: transparent;
-    }
-
-    .dropdown-menu li a {
-      color: #000 !important;
-    }
-    .dropdown-menu li a:hover {
-      background-color: red !important;
-    }
-    footer {
-      background-color: #2d2d30;
-      color: #f5f5f5;
-      padding: 32px;
-    }
-    footer a {
-      color: #f5f5f5;
-    }
-    footer a:hover {
-      color: #777;
-      text-decoration: none;
-    }
-    .form-control {
-      border-radius: 0;
-    }
-    textarea {
-      resize: none;
-    }
-  </style-->
+      h3, h4 {
+        margin: 10px 0 30px 0;
+        letter-spacing: 10px;
+        font-size: 20px;
+        color: #111;
+      }
+      .container {
+        padding: 80px 120px;
+      }
+      .person {
+        border: 10px solid transparent;
+        margin-bottom: 25px;
+        width: 80%;
+        height: 80%;
+        opacity: 0.7;
+      }
+      .person:hover {
+        border-color: #f1f1f1;
+      }
+      .carousel-inner img {
+        -webkit-filter: grayscale(90%);
+        filter: grayscale(90%); /* make all photos black and white */
+        width: 100%; /* Set width to 100% */
+        margin: auto;
+      }
+      .carousel-caption h3 {
+        color: #fff !important;
+      }
+      @media (max-width: 600px) {
+        .carousel-caption {
+          display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+        }
+      }
+      .bg-1 {
+        background: #2d2d30;
+        color: #bdbdbd;
+      }
+      .bg-1 h3 {color: #fff;}
+      .bg-1 p {font-style: italic;}
+      .list-group-item:first-child {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+      }
+      .list-group-item:last-child {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .thumbnail {
+        padding: 0 0 15px 0;
+        border: none;
+        border-radius: 0;
+      }
+      .thumbnail p {
+        margin-top: 15px;
+        color: #555;
+      }
+      .btn {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #f1f1f1;
+        border-radius: 0;
+        transition: .2s;
+      }
+      .btn:hover, .btn:focus {
+        border: 1px solid #333;
+        background-color: #fff;
+        color: #000;
+      }
+      .modal-header, h4, .close {
+        background-color: #333;
+        color: #fff !important;
+        text-align: center;
+        font-size: 30px;
+      }
+      .modal-header, .modal-body {
+        padding: 40px 50px;
+      }
+      .nav-tabs li a {
+        color: #777;
+      }
+      #googleMap {
+        width: 100%;
+        height: 400px;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+      }
+      .navbar {
+        font-family: Montserrat, sans-serif;
+        margin-bottom: 0;
+        background-color: #2d2d30;
+        border: 0;
+        font-size: 11px !important;
+        letter-spacing: 4px;
+        opacity: 0.9;
+      }
+      .navbar li a, .navbar .navbar-brand {
+        color: #d5d5d5 !important;
+      }
+      .navbar-nav li a:hover {
+        color: #fff !important;
+      }
+      .navbar-nav li.active a {
+        color: #fff !important;
+        background-color: #29292c !important;
+      }
+      .navbar-default .navbar-toggle {
+        border-color: transparent;
+      }
+      .open .dropdown-toggle {
+        color: #fff;
+        background-color: #555 !important;
+      }
+      .dropdown-menu li a {
+        color: #000 !important;
+      }
+      .dropdown-menu li a:hover {
+        background-color: red !important;
+      }
+      footer {
+        background-color: #2d2d30;
+        color: #f5f5f5;
+        padding: 32px;
+      }
+      footer a {
+        color: #f5f5f5;
+      }
+      footer a:hover {
+        color: #777;
+        text-decoration: none;
+      }
+      .form-control {
+        border-radius: 0;
+      }
+      textarea {
+        resize: none;
+      }
+    </style>
+  </head>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#myPage">Logo</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#myPage">Home</a></li>
+          <li><a href="#band">Quem Somos</a></li>
+          <li><a href="#tour">Missão</a></li>
+          <li><a href="#contact">Contactos</a></li>
+          </li>
+          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -116,34 +182,30 @@
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
-
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="<%= asset_path 'shoe1.jpg' %>" alt="Shoe 1" width="1200" height="700">
+        <img src="ny.jpg" alt="New York" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>Class</h3>
-          <p>Peace.</p>
+          <h3>New York</h3>
+          <p>The atmosphere in New York is lorem ipsum.</p>
         </div>
       </div>
-
       <div class="item">
-        <img src="<%= asset_path 'shoe2.jpg' %>" alt="Shoe 2" width="1200" height="700">
+        <img src="chicago.jpg" alt="Chicago" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>Beauty</h3>
-          <p>Energy.</p>
+          <h3>Chicago</h3>
+          <p>Thank you, Chicago - A night we won't forget.</p>
         </div>
       </div>
-
       <div class="item">
-        <img src="<%= asset_path 'shoe3.jpg' %>" alt="Shoe 3" width="1200" height="700">
+        <img src="la.jpg" alt="Los Angeles" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>Confortable</h3>
-          <p>Passion.</p>
+          <h3>LA</h3>
+          <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
         </div>
       </div>
     </div>
-
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -154,71 +216,139 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
-  <!-- Container (Joia Da Europa Section) -->
-  <div id="about" class="container text-center">
-    <h3>Joia da Europa</h3>
-    <p><em>We love shoes!</em></p>
-    <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <!-- Container (The Band Section) -->
+  <div id="band" class="container text-center">
+    <h3>Quem somos?</h3>
+    <p>Em 2006, ano de novas oportunidades e desafios, António Bento Da Costa Ferreira inicia-se por conta própria, criando a empresa Jóia Da Europa, que se dedica inteiramente à fabricação de calçado.
+      Jóia da Europa, é mais um dos casos de sucesso nacional e internacional, isto porque a inovação e a qualidade dos seus produtos é difícil de encontrar. Lentamente, ano após ano, esta empresa tem crescido, e não põe de parte qualquer desafio vindo à sua direcção. Para esta empresa tudo é possível.
+      Ao longo destes anos, Jóia da Europa tem feito apostas ao nível de novas tecnologias, tanto em máquinas, como em programas informáticos, o que faz com que exista uma margem bastante reduzida de erro, e permite à empresa dar resposta a todas as propostas que lhe sejam submetidas, nos prazos subordinados.
+      A qualidade dos nossos serviços advém também do valor que têm as matérias – primas seleccionadas para a nossa fabricação. Em todas as épocas, os nossos clientes podem contar com uma colecção completa e diferente.
+      Se procura qualidade, inovação, transformação, diferenciação de produtos, venha conhecer a nossa empresa, porque aqui encontra tudo o que precisa..</p>
     <br>
   </div>
-  <!-- Container (Contacts Section) -->
-  <div id="Contacts" class="container">
-    <h3 class="text-center">Contacts</h3>
-    <p class="text-center"><em>We love our clients!</em></p>
-
-    <div class="row">
-      <div class="col-md-4">
-        <p>Client? Drop a note.</p>
-        <p><span class="glyphicon glyphicon-map-marker"></span>Felgueiras, Porto, Portugal</p>
-        <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
-        <p><span class="glyphicon glyphicon-envelope"></span>Email: lsig@gmail.com</p>
-      </div>
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-sm-6 form-group">
-            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-          </div>
-          <div class="col-sm-6 form-group">
-            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-          </div>
+  <!-- Container (TOUR Section) -->
+  <div id="tour" class="container text-center">
+    <h3>Missão</h3>
+    <p>Uma empresa não se define pelo nome que tem, define-se pelo esforço e trabalho despendido por todos aqueles que fazem parte dela, os recursos humanos, fornecedores, clientes e todos os outros colaboradores são necessários para o sucesso de qualquer empresa, e Jóia da Europa conta com a ajuda de todos.
+      A nossa missão centraliza-se em:
+      Atender às necessidades de todos os nossos clientes, aperfeiçoando sempre os nossos produtos e serviços.
+      Fornecer produtos de tal qualidade que os nossos clientes se sintam satisfeitos, e os nossos empregados e parceiros de negócios se beneficiem com nosso êxito.
+      Oferecer soluções para qualquer ideia, contando com a nossa assistência.
+      Apostar sempre em tecnologias inovadoras.</p>
+    <br>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Tickets</h4>
         </div>
-        <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-        <br>
-        <div class="row">
-          <div class="col-md-12 form-group">
-            <button class="btn pull-right" type="submit">Send</button>
-          </div>
+        <div class="modal-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per person</label>
+              <input type="number" class="form-control" id="psw" placeholder="How many?">
+            </div>
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send To</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+            </div>
+            <button type="submit" class="btn btn-block">Pay
+              <span class="glyphicon glyphicon-ok"></span>
+            </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span> Cancel
+          </button>
+          <p>Need <a href="#">help?</a></p>
         </div>
       </div>
     </div>
   </div>
-  <br>
-  <h3 class="text-center">From The Blog</h3>
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Ana</a></li>
-    <li><a data-toggle="tab" href="#menu1">Catarina</a></li>
-    <li><a data-toggle="tab" href="#menu2">Luís</a></li>
-    <li><a data-toggle="tab" href="#menu3">Tiago</a></li>
-
-  </ul>
-
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h2>Ana Azevedo, Team Manager</h2>
-      <p>Love being team manager, of this briliant team! Looking forward to lorem ipsum.</p>
+</div>
+<!-- Container (Contact Section) -->
+<div id="contact" class="container">
+  <h3 class="text-center">Contactos</h3>
+  <p class="text-center"><em>Formulário de Contactos!</em></p>
+  <div class="row">
+    <div class="col-md-4">
+      <p><span class="glyphicon glyphicon-map-marker"></span> Rua Santa Maria, 437 Barrosas 4650-139 Idães Felgueiras</p>
+      <p><span class="glyphicon glyphicon-phone"></span>Telefone:+351 255 312 443</p>
+      <p><span class="glyphicon glyphicon-phone"></span>Fax:+351 255 312 444</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>Email: geral@joiadaeuropa.com</p>
     </div>
-    <div id="menu1" class="tab-pane fade">
-      <h2>Catarina Xavier, Programmer</h2>
-      <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <h2>Luís Magolo, Programmer</h2>
-      <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
-    </div>
-    <div id="menu3" class="tab-pane fade">
-      <h2>Tiago Sousa, Project Manager</h2>
-      <p>I mean, sometimes I enjoy what i do, but other times I enjoy other things.</p>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="nome" name="nome" placeholder="Nome" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="Comentarios" name="Comentarios" placeholder="Comentario" rows="5"></textarea>
+      <br>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <button class="btn pull-right" type="submit">Enviar</button>
+        </div>
+      </div>
     </div>
   </div>
-  <!--= link_to t('my_account'), profile_index_path %-->
+  <!-- Add Google Maps -->
+  <div id="googleMap"></div>
+  <script>
+      function myMap() {
+          var myCenter = new google.maps.LatLng(41.3344269,-8.2679411,17);
+          var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+          var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          var marker = new google.maps.Marker({position:myCenter});
+          marker.setMap(map);
+      }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+  <!--
+  To use this code on your website, get a free API key from Google.
+  Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+  -->
+  <!-- Footer -->
+  <footer class="text-center">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <p>Joia da Europa Unipessoal.LDA @Webdesign by:  PDSG5</p>
+  </footer>
+  <script>
+      $(document).ready(function(){
+          // Initialize Tooltip
+          $('[data-toggle="tooltip"]').tooltip();
+          // Add smooth scrolling to all links in navbar + footer link
+          $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+              // Make sure this.hash has a value before overriding default behavior
+              if (this.hash !== "") {
+                  // Prevent default anchor click behavior
+                  event.preventDefault();
+                  // Store hash
+                  var hash = this.hash;
+                  // Using jQuery's animate() method to add smooth page scroll
+                  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                  $('html, body').animate({
+                      scrollTop: $(hash).offset().top
+                  }, 900, function(){
+                      // Add hash (#) to URL when done scrolling (default click behavior)
+                      window.location.hash = hash;
+                  });
+              } // End if
+          });
+      })
+  </script>
+  </body>
+  </html>
+  <h1>Home</h1>
+  <%= link_to t('my_account'), profile_index_path %>
+</div>
