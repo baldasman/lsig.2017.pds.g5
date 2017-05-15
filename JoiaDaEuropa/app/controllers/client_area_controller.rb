@@ -4,7 +4,7 @@ class ClientAreaController < ApplicationController
 
   def index
     @account = current_user
-    @order = Order.all
+    @order = Order.where(:order_statuses => :id)
   end
 
   def new_order

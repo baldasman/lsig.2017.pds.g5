@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.text :description
       t.datetime :order_date
       t.datetime :delivery_date
-      t.decimal :total_value, precision: 2
+      t.decimal :total_value
       t.text :reason
       t.text :obs
 
