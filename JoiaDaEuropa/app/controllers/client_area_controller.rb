@@ -4,6 +4,7 @@ class ClientAreaController < ApplicationController
 
   def index
     @account = current_user
+    @order = Order.all
   end
 
   def new_order
@@ -13,4 +14,5 @@ class ClientAreaController < ApplicationController
   def save_order
     @order = order
   end
+
 end

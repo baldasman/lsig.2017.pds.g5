@@ -30,14 +30,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>1</td>
-              <td>Anna</td>
-              <td>Pitt</td>
-              <td>35</td>
-              <td>New York</td>
-              <td>USA</td>
-            </tr>
+            <% @order.each do |order| %>
+                <tr>
+                  <td><%=h order.id %></td>
+                  <td><%=h order.delivery_date %></td>
+                  <td><%=h order.price %></td>
+                  <td><%=h order.obs %></td>
+                  <td><%=h order.order_state_id  %>
+                </tr>
+            <% end %>
             </tbody>
           </table>
         </div>
