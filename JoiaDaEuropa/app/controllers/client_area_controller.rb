@@ -20,14 +20,20 @@ class ClientAreaController < ApplicationController
     end
 
     def save_order
-        @order = current_user.orders.build(orders_params) # Not the final implementation!
+
+        # TODO: edit if id is present
+
+        @order = Order.new user_id: current_user.id
+        @order.description = params[:order][:description]
+
         if @order.save
             flash[:success] = "Your order was submited successfully!"
             redirect_to client_area_index_path
         else
-            flash[:error] = "Something is wrong with your order. Please check your form."
-            render 'home/index'
+            flash[:error] = @order.errors.messages
+            redirect_to client_area_new_order_path
         end
+
     end
 
 end
