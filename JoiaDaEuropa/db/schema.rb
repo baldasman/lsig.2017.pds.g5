@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509153949) do
+ActiveRecord::Schema.define(version: 20170516104143) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -29,24 +29,24 @@ ActiveRecord::Schema.define(version: 20170509153949) do
   end
 
   create_table "order_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.text     "internal_description", limit: 65535
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "description",     limit: 65535
     t.datetime "order_date"
     t.datetime "delivery_date"
-    t.decimal  "total_value",                   precision: 10
     t.text     "reason",          limit: 65535
     t.text     "obs",             limit: 65535
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
     t.integer  "user_id"
     t.integer  "order_status_id"
     t.integer  "order_file_id"
     t.integer  "reference_id"
+    t.decimal  "total_value",                   precision: 15, scale: 2
     t.index ["order_file_id"], name: "index_orders_on_order_file_id", using: :btree
     t.index ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
     t.index ["reference_id"], name: "index_orders_on_reference_id", using: :btree

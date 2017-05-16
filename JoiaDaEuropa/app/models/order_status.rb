@@ -1,3 +1,10 @@
 class OrderStatus < ApplicationRecord
-  belongs_to :order
+    has_many :orders
+
+    def description
+
+        I18n.translate(self.internal_description)
+
+    end
+
 end

@@ -1,7 +1,5 @@
-<h1>ClientArea#new_order</h1>
-<p>Find me in app/views/client_area/new_order.html.erb</p>
-
 <div class="container">
+    <%= form_for @order, :url => url_for(:controller => 'client_area', :action => 'save_order'), html: {class: 'container'} do |f| %>
   <h2>New Order</h2>
   <div class="col-sm-13">
     <li>Preço:</li>
@@ -13,7 +11,10 @@
   </div>
   <div>
     <li>Data de Entrega:</li>
-    <li><input type="datetime">dd/mm/aaaa</li> <!--<= f.text_field :date_of_tour, "data-provide" => 'datepicker' %>-->
+    <li>
+      <div class="input-group date">
+          <%= f.text_field :payment_date, :id => 'datepicker', :value => Date.today %>
+      </div>
   </div>
   <div>
     <li>OBS:</li>
@@ -22,4 +23,11 @@
   <div>
     <input type="button" name="create_order" value="Criar Encomenda">
   </div>
+        <%= f.submit t('save') %>
+    <% end %>
 </div>
+
+
+<script>
+    $('#datepicker').datepicker({format: 'yyyy-mm-dd'});
+</script>

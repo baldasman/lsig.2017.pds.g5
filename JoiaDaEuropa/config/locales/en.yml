@@ -23,3 +23,7 @@ en:
   hello: "Hello world"
   my_account: "My account"
   email: "O meu email"
+  order_status:
+    pending: "Pending"
+    cancelled: "Cancelled"
+    completed: "Concluded"
