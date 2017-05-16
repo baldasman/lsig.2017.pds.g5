@@ -1,28 +1,53 @@
 <div class="container-fluid">
     <%= form_for @order, :url => url_for(:controller => 'client_area', :action => 'save_order'), html: {class: 'container-fluid'} do |f| %>
   <h2>New Order</h2>
-  <div class="col-sm-13">
-      <%=	f.label :total_value %>
-      <%= f.text_field :total_value %>
-  </div>
-  <div class="fileinputs">Select File <input type="file" class="file"></div>
-  <div>
-      <div class="input-group date">
-          <%= f.label :delivery_date %>
-          <%= f.text_field :delivery_date, :id => 'datepicker', :value => Date.today %>
-      </div>
-  </div>
-  <div>
-    <%=	f.label :obs %>
+
+  <div class="container">
+      <table class="table">
+      <thead>
+      <tr>
+        <th>Total value</th>
+        <th></th>
+        <th>Delivery Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+          <td><%= f.text_field :total_value %></td>
+          <td></td>
+          <td><%= f.text_field :delivery_date, :id => 'datepicker', :value => Date.today %></td>
+      </tr>
+      </tbody>
+      </table>
     <br>
-    <%= f.text_area :obs %>
+    <br>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Select File</th>
+        <th>Observations</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><input type="file" class="file"></td>
+        <td><%= f.text_area :obs %></td>
+      </tr>
+      </tbody>
+    </table>
   </div>
-      <%= f.submit t('save') %>
-    <% end %>
-</div>
+
+  <div class="actions" align="center">
+  <%= f.submit t('save') %>
+  </div>
 
 
-<script>
-    $('#datepicker').datepicker({format: 'yyyy-mm-dd'});
-</script>
+
+  <% end %>
+  </div>
+
+
+  <script>
+      $('#datepicker').datepicker({format: 'dd-mm-yyyy'});
+  </script>
 
