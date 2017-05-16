@@ -1,29 +1,22 @@
-<div class="container">
-    <%= form_for @order, :url => url_for(:controller => 'client_area', :action => 'save_order'), html: {class: 'container'} do |f| %>
+<div class="container-fluid">
+    <%= form_for @order, :url => url_for(:controller => 'client_area', :action => 'save_order'), html: {class: 'container-fluid'} do |f| %>
   <h2>New Order</h2>
   <div class="col-sm-13">
-    <li>Preço:</li>
-    <tr><input type="text" name="nome" size="10"> <br /></tr>
+      <%=	f.label :total_value %>
+      <%= f.text_field :total_value %>
   </div>
-  <div class="fileinputs">
-    <li>Escolher ficheiro:</li>
-    <input type="file" class="file">
-  </div>
+  <div class="fileinputs">Escolher ficheiro <input type="file" class="file"></div>
   <div>
-    <li>Data de Entrega:</li>
-    <li>
       <div class="input-group date">
-          <%= f.text_field :payment_date, :id => 'datepicker', :value => Date.today %>
+          <%= f.label :delivery_date %>
+          <%= f.text_field :delivery_date, :id => 'datepicker', :value => Date.today %>
       </div>
   </div>
   <div>
-    <li>OBS:</li>
-    <textarea name="obs" cols=50 rows=10>isto é uma area de texto</textarea>
+    <%=	f.label :obs %>
+    <%= f.text_area :obs %>
   </div>
-  <div>
-    <input type="button" name="create_order" value="Criar Encomenda">
-  </div>
-        <%= f.submit t('save') %>
+      <%= f.submit t('save') %>
     <% end %>
 </div>
 

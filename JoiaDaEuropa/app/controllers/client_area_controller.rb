@@ -16,18 +16,23 @@ class ClientAreaController < ApplicationController
         @order = Order.new
     end
 
+    def view_order
+        @order = Order.find_by(id: params[:order_id])
+    end
+
     def save_order
 
         # TODO: edit if id is present
+        _order = params[:order]
 
         @order = Order.new user_id: current_user.id
-        @order.description = params[:order][:description]
-        @order.total_value = params[:order][:total_value]
-        @order.delivery_date = params[:order][:delivery_date]
-        @order.obs = params[:order][:obs]
+        @order.description = _order[:description]
+        @order.total_value = _order[:total_value]
+        @order.delivery_date = _order[:delivery_date]
+        @order.obs = _order[:obs]
 
         if @order.save
-            flash[:success] = "Your order was submited successfully!"
+            flash[:success] = 'Your order was successfully created!'
             redirect_to client_area_index_path
         else
             flash[:error] = @order.errors.messages

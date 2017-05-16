@@ -1,0 +1,18 @@
+<h1>My Order #<%= @order.id %></h1>
+
+<div>
+  <div>
+    <span><%= t('total_value') %></span>
+  </div>
+  <div>
+    <span><%= @order.total_value %></span>
+  </div>
+</div>
+<div>
+  <div>
+    <span><%= t('delivery_date') %></span>
+  </div>
+  <div>
+    <span><%= @order.delivery_date.strftime('%d-%m-%Y') %></span>
+  </div>
+</div>
