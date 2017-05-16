@@ -14,7 +14,6 @@
     <div id="home" class="tab-pane fade in active">
       <h3>Orders Made</h3>
       <div class="container">
-        <!--p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p-->
         <div class="table-responsive">
           <table class="table">
             <thead>
@@ -30,7 +29,7 @@
             <tbody>
             <% @orders.each do |order| %>
                 <tr>
-                  <td><%=h order.id %></td>
+                  <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
                   <td><%=h order.description %></td>
                   <td><%=h order.order_date %></td>
                   <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>

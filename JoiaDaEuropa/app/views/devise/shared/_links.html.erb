@@ -1,15 +1,19 @@
-<%- if controller_name != 'client_area' %>
-  <%= link_to "Log in", client_area_index_path(resource_name) %><br />
+<!-- For  logging in a user and creating the session for them-->
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_user_session_path(resource_name) %><br />
 <% end -%>
 
+<!-- For signing up a user with the application -->
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <%= link_to "Sign up", new_registration_path(resource_name) %><br />
 <% end -%>
 
+<!-- For recovering forgotten passwords  -->
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
 <% end -%>
 
+<!-- For confirming email addresses -->
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
 <% end -%>
