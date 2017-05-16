@@ -17,6 +17,7 @@ class ClientAreaController < ApplicationController
       flash[:success] = "Your order was submited successfully!"
       redirect_to
     else
+      flash[:error] = "Something is wrong with your order. Please check your form."
       render 'home/index'
     end
   end

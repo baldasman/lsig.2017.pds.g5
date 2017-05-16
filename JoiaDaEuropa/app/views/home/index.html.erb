@@ -23,16 +23,7 @@
       .container {
         padding: 80px 120px;
       }
-      .person {
-        border: 10px solid transparent;
-        margin-bottom: 25px;
-        width: 80%;
-        height: 80%;
-        opacity: 0.7;
-      }
-      .person:hover {
-        border-color: #f1f1f1;
-      }
+
       .carousel-inner img {
         -webkit-filter: grayscale(90%);
         filter: grayscale(90%); /* make all photos black and white */
@@ -91,46 +82,12 @@
       .modal-header, .modal-body {
         padding: 40px 50px;
       }
-      .nav-tabs li a {
-        color: #777;
-      }
+
       #googleMap {
         width: 100%;
         height: 400px;
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
-      }
-      .navbar {
-        font-family: Montserrat, sans-serif;
-        margin-bottom: 0;
-        background-color: #2d2d30;
-        border: 0;
-        font-size: 11px !important;
-        letter-spacing: 4px;
-        opacity: 0.9;
-      }
-      .navbar li a, .navbar .navbar-brand {
-        color: #d5d5d5 !important;
-      }
-      .navbar-nav li a:hover {
-        color: #fff !important;
-      }
-      .navbar-nav li.active a {
-        color: #fff !important;
-        background-color: #29292c !important;
-      }
-      .navbar-default .navbar-toggle {
-        border-color: transparent;
-      }
-      .open .dropdown-toggle {
-        color: #fff;
-        background-color: #555 !important;
-      }
-      .dropdown-menu li a {
-        color: #000 !important;
-      }
-      .dropdown-menu li a:hover {
-        background-color: red !important;
       }
 
       .form-control {
@@ -141,29 +98,7 @@
       }
     </style>
   </head>
-  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#myPage">Logo</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#contacts">Contacts</a></li>
-          </li>
-          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <body>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -174,27 +109,30 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="ny.jpg" alt="New York" width="1200" height="700">
+        <img src="<%= asset_path 'shoe1.jpg' %>" alt="Shoe 1" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>New York</h3>
-          <p>The atmosphere in New York is lorem ipsum.</p>
+          <h3>Class</h3>
+          <p>Peace.</p>
         </div>
       </div>
+
       <div class="item">
-        <img src="chicago.jpg" alt="Chicago" width="1200" height="700">
+        <img src="<%= asset_path 'shoe2.jpg' %>" alt="Shoe 2" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>Chicago</h3>
-          <p>Thank you, Chicago - A night we won't forget.</p>
+          <h3>Beauty</h3>
+          <p>Energy.</p>
         </div>
       </div>
+
       <div class="item">
-        <img src="la.jpg" alt="Los Angeles" width="1200" height="700">
+        <img src="<%= asset_path 'shoe3.jpg' %>" alt="Shoe 3" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>LA</h3>
-          <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
+          <h3>Confortable</h3>
+          <p>Passion.</p>
         </div>
       </div>
     </div>
+
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -228,44 +166,10 @@
       Apostar sempre em tecnologias inovadoras.</p>
     <br>
   </div>
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">×</button>
-          <h4><span class="glyphicon glyphicon-lock"></span> Tickets</h4>
-        </div>
-        <div class="modal-body">
-          <form role="form">
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per person</label>
-              <input type="number" class="form-control" id="psw" placeholder="How many?">
-            </div>
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send To</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-            </div>
-            <button type="submit" class="btn btn-block">Pay
-              <span class="glyphicon glyphicon-ok"></span>
-            </button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
-            <span class="glyphicon glyphicon-remove"></span> Cancel
-          </button>
-          <p>Need <a href="#">help?</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
   <hr>
 <!-- Container (Contact Section) -->
 <div id="contacts" class="container">
   <h3 class="text-center">Contacts</h3>
-  <p class="text-center"><em>Formulário de Contactos!</em></p>
   <div class="row">
     <div class="col-md-4">
       <p><span class="glyphicon glyphicon-map-marker"></span> Rua Santa Maria, 437 Barrosas 4650-139 Idães Felgueiras</p>
@@ -293,17 +197,17 @@
   </div>
 </div>
   <!-- Add Google Maps -->
-  <div id="googleMap"></div>
+  <!--div id="googleMap"></div>
   <script>
       function myMap() {
-          var myCenter = new google.maps.LatLng(41.3344269,-8.2679411,17);
+          var myCenter = new google.maps.LatLng(41.334553,-8.265726);
           var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
           var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
           var marker = new google.maps.Marker({position:myCenter});
           marker.setMap(map);
       }
   </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script-->
   <!--
   To use this code on your website, get a free API key from Google.
   Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
@@ -335,6 +239,5 @@
   </script>
   </body>
   </html>
-  <h1>Home</h1>
-  <%= link_to t('my_account'), profile_index_path %>
+  <!--<= link_to t('my_account'), profile_index_path %-->
 </div>

@@ -1,3 +1,40 @@
+<style>
+  .nav-tabs li a {
+    color: #777;
+  }
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+  .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+  .open .dropdown-toggle {
+    color: #fff;
+    background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+    color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+    background-color: red !important;
+  }
+</style>
 <div class="container">
 <header class="navbar navbar-fixed-top navbar-inverse bg-inverse">
   <div class="navbar-inner">
@@ -31,10 +68,10 @@
               <li><li><%= link_to 'EN', '/?lang=en' %></li></li>
             </ul>
           </li>
-          <li><a href="#About">About</a></li>
-          <li><a href="#Mission">Mission</a></li>
-          <li><a href="#News">News</a></li>
-          <li><a href="#Contacts">Contacts</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contacts">Contacts</a></li>
           <li><a><span class="glyphicon glyphicon-user"></span> <%= link_to 'Sign Up', new_user_registration_path %></a></li>
           <% if signed_in? %>
               <li class="dropdown">
