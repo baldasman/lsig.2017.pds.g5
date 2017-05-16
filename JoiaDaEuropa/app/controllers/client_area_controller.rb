@@ -10,9 +10,6 @@ class ClientAreaController < ApplicationController
         @cancelled_orders = Order.where(order_status_id: 2)
         @completed_orders = Order.where(order_status_id: 3)
 
-
-
-
     end
 
     def new_order
@@ -25,6 +22,9 @@ class ClientAreaController < ApplicationController
 
         @order = Order.new user_id: current_user.id
         @order.description = params[:order][:description]
+        @order.total_value = params[:order][:total_value]
+        @order.delivery_date = params[:order][:delivery_date]
+        @order.obs = params[:order][:obs]
 
         if @order.save
             flash[:success] = "Your order was submited successfully!"
