@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'client_area/new_order'
     get 'client_area/save_order'
     post 'client_area/save_order'
+    get '/client_area/view_order/:order_id', to: 'client_area#view_order', as: 'client_area_view_order'
 
 
 
