@@ -4,10 +4,11 @@
     <%= link_to '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> New Order</button>'.html_safe, client_area_new_order_path %>
   </div>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">All Orders</a></li>
+
     <li><a data-toggle="tab" href="#menu1">Pending Orders</a></li>
-    <li><a data-toggle="tab" href="#menu2">Orders Canceled</a></li>
+    <li><a data-toggle="tab" href="#menu2">Canceled Orders</a></li>
     <li><a data-toggle="tab" href="#menu3">Completed Orders</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">All Orders</a></li>
   </ul>
 
   <div class="tab-content">
@@ -16,6 +17,7 @@
       <div class="container">
         <!--p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p-->
         <div class="table-responsive">
+          <div style="position:relative;left:-125px;top:2px;background-color:#DCDCDC;">
           <table class="table">
             <thead>
             <tr>
@@ -48,6 +50,7 @@
       <div class="container">
         <!--p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p-->
         <div class="table-responsive">
+          <div style="position:relative;left:-125px;top:2px;background-color:#DCDCDC;">
           <table class="table">
             <thead>
             <tr>
@@ -80,6 +83,7 @@
       <div class="container">
         <!--p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p-->
         <div class="table-responsive">
+          <div style="position:relative;left:-125px;top:2px;background-color:#DCDCDC;">
           <table class="table">
             <thead>
             <tr>
@@ -112,6 +116,7 @@
       <div class="container">
         <!--p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p-->
         <div class="table-responsive">
+          <div style="position:relative;left:-125px;top:2px;background-color:#DCDCDC;">
           <table class="table">
             <thead>
             <tr>

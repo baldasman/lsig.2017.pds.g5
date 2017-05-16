@@ -144,7 +144,11 @@ h3, h4 {
     border-radius: 0;
 }
 textarea {
-    resize: none;
+    border: 2px solid;
+    padding: 20px;
+    width: 500px;
+    resize: both;
+    overflow: auto;
 }
 
 a.social-links {

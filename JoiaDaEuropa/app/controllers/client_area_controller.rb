@@ -39,6 +39,11 @@ class ClientAreaController < ApplicationController
             redirect_to client_area_new_order_path
         end
 
+
     end
 
+  def order_params
+      params[:order]
+
+  end
 end

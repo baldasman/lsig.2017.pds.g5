@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get 'client_area/save_order'
     post 'client_area/save_order'
 
+
+
     root to: 'home#index'
 
 end
