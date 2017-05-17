@@ -18,21 +18,20 @@
       </tr>
       </tbody>
       </table>
-
-      <span>Encomenda</span>
-      <%= f.select(:reference_id, options_for_select([['Selecione fatura', nil]].concat(@old_orders.map{ |o| [o.description, o.id]}) )) %>
     <br>
     <br>
     <table class="table">
       <thead>
       <trrail>
+        <th>Invoice Reference</th>
         <th>Select File</th>
         <th>Observations</th>
       </trrail>
       </thead>
       <tbody>
       <tr>
-        <td><input type="file" class="file"></td>
+        <td><div><%= f.select(:reference_id, options_for_select([['Selecione fatura', nil]].concat(@old_orders.map{ |o| [o.description, o.id]}) )) %></div></td>
+        <td><%= f.file_field :type %></td>
         <td><%= f.text_area :obs %></td>
       </tr>
       </tbody>
@@ -59,4 +58,3 @@
         });
     });
 </script>
-

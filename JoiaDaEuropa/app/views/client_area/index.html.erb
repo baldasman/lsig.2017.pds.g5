@@ -2,9 +2,13 @@
   <h2>My Orders</h2>
   <div class="actions" align="right">
     <%= link_to '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> New Order</button>'.html_safe, client_area_new_order_path %>
+    <%= form_tag('/search', method: 'get') do %>
+        <%= label_tag(:q, 'Search for:') %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag('Search') %>
+    <% end %>
   </div>
   <ul class="nav nav-tabs">
-
     <li><a data-toggle="tab" href="#menu1">Pending Orders</a></li>
     <li><a data-toggle="tab" href="#menu2">Canceled Orders</a></li>
     <li><a data-toggle="tab" href="#menu3">Completed Orders</a></li>
