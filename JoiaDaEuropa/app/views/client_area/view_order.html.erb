@@ -18,7 +18,7 @@
 </div>
 <div>
   <div>
-    <%= button_to 'Delete', client_area_destroy_order_path %>
+    <%= button_to 'Delete', client_area_destroy_order_path(order_id: @order.id), method: 'POST'%>
   </div>
   <div>
     <%= link_to 'Edit', client_area_edit_order_path %>
@@ -38,9 +38,9 @@
           </thead>
           <tbody>
           <tr>
-            <td><%= f.text_field :description %></td>
-            <td><%= f.text_field :total_value %></td>
-            <td><%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today, :class => 'input-group date form-control' %></td>
+            <td><%= @order.description %></td>
+            <td><%= @order.total_value %></td>
+            <td><%= @order.delivery_date %></td>
           </tr>
           </tbody>
         </table>
@@ -56,19 +56,17 @@
           <tbody>
           <tr>
             <td><input type="file" class="file"></td>
-            <td><%= f.text_area :obs %></td>
+            <td><%= @order.obs %></td>
           </tr>
           </tbody>
         </table>
       </div>
 
       <div class="actions" align="center">
-        <%= f.submit t('save') %>
+
 
         <!-- Cancel button -->
         <%= button_to 'Cancel', client_area_index_path %>
       </div>
 
-
-  <% end %>
 </div>

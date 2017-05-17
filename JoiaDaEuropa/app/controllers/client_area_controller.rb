@@ -38,7 +38,7 @@ class ClientAreaController < ApplicationController
         if _order[:id].to_i > 0
             @order = Order.find_by(id: _order[:id])
         else
-            @order = Order.new user_id: current_user.id, order_status_id_id: 1
+            @order = Order.new user_id: current_user.id, order_status_id: 1
         end
 
         @order = Order.new user_id: current_user.id, order_status_id: 1

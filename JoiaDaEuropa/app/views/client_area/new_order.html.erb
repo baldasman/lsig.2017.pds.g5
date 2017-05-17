@@ -14,7 +14,7 @@
       <tr>
           <td><%= f.text_field :description %></td>
           <td><%= f.text_field :total_value %></td>
-          <td><%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today, :class => 'input-group date form-control' %></td>
+          <td><%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %></td>
       </tr>
       </tbody>
       </table>
@@ -50,9 +50,9 @@
 
 <script type="text/javascript">
     $(function () {
-        $('#delivery_date').datetimepicker({
+        $('#delivery_date').datepicker({
             defaultDate: "now",
-            format: 'DD-mm-YYYY'
+            format: 'dd-mm-yyyy'
         });
     });
 </script>
