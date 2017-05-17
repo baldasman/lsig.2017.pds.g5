@@ -17,11 +17,15 @@ class ClientAreaController < ApplicationController
 
         @order = Order.new
 
+        @old_orders = Order.where(user_id: current_user.id, order_status_id: [1, 2, 3])
+
     end
 
     def view_order
 
         @order = Order.find_by(id: params[:order_id])
+
+        @old_order = Order.find_by(id: @order.reference_id) if @order.reference_id
 
     end
 
@@ -46,6 +50,7 @@ class ClientAreaController < ApplicationController
         @order.total_value = _order[:total_value]
         @order.delivery_date = _order[:delivery_date]
         @order.obs = _order[:obs]
+        @order.reference_id = _order[:reference_id]
 
         if @order.save
             flash[:success] = 'Your order was successfully created!'

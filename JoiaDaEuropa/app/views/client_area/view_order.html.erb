@@ -1,5 +1,10 @@
 <h1>My Order #<%= @order.id %></h1>
 
+<% if @old_order %>
+    <h1>Referencia:</h1>
+    <h3><%= @old_order.description %></h3>
+<% end %>
+
 <div>
   <div>
     <span><%= t('total_value') %></span>
@@ -13,7 +18,7 @@
     <span><%= t('delivery_date') %></span>
   </div>
   <div>
-    <span><%= @order.delivery_date.strftime('%d-%m-%Y') %></span>
+    <span><%= @order.delivery_date.strftime('%d-%m-%Y') rescue nil %></span>
   </div>
 </div>
 <div>
@@ -70,3 +75,5 @@
       </div>
 
 </div>
+
+

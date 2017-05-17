@@ -18,6 +18,9 @@
       </tr>
       </tbody>
       </table>
+
+      <span>Encomenda</span>
+      <%= f.select(:reference_id, options_for_select([['Selecione fatura', nil]].concat(@old_orders.map{ |o| [o.description, o.id]}) )) %>
     <br>
     <br>
     <table class="table">
