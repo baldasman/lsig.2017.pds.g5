@@ -1,32 +1,6 @@
-<h1>My Order #<%= @order.id %></h1>
-
-<div>
-  <div>
-    <span><%= t('total_value') %></span>
-  </div>
-  <div>
-    <span><%= @order.total_value %></span>
-  </div>
-</div>
-<div>
-  <div>
-    <span><%= t('delivery_date') %></span>
-  </div>
-  <div>
-    <span><%= @order.delivery_date.strftime('%d-%m-%Y') %></span>
-  </div>
-</div>
-<div>
-  <div>
-    <%= button_to 'Delete', client_area_destroy_order_path %>
-  </div>
-  <div>
-    <%= link_to 'Edit', client_area_edit_order_path %>
-  </div>
-</div>
-
 <div class="container-fluid">
-      <h2>My Order #<%= @order.id %></h2>
+  <%= form_for @order, :url => url_for(:controller => 'client_area', :action => 'save_order'), html: {class: 'container-fluid'}, :method => :POST do |f| %>
+      <h2>Order #<%= @order.id %></h2>
       <div class="container">
         <table class="table">
           <thead>
@@ -72,3 +46,13 @@
 
   <% end %>
 </div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#delivery_date').datetimepicker({
+            defaultDate: "now",
+            format: 'DD-mm-YYYY'
+        });
+    });
+</script>

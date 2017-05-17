@@ -48,7 +48,6 @@
     <div id="menu1" class="tab-pane fade">
       <h3>Pending Orders</h3>
       <div class="container">
-        <!--p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p-->
         <div class="table-responsive">
           <div style="position:relative;left:-125px;top:2px;background-color:#DCDCDC;">
           <table class="table">
@@ -68,7 +67,7 @@
                   <td><%=h order.id %></td>
                   <td><%=h order.description %></td>
                   <td><%=h order.order_date %></td>
-                  <td><%=h order.total_value %></td>
+                  <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
                   <td><%=h order.delivery_date %></td>
                   <td><%=h order.order_status.description %></td>
                 </tr>
@@ -102,7 +101,7 @@
                   <td><%=h order.id %></td>
                   <td><%=h order.description %></td>
                   <td><%=h order.order_date %></td>
-                  <td><%=h order.total_value %></td>
+                  <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
                   <td><%=h order.delivery_date %></td>
                   <td><%=h order.order_status.description %></td>
                 </tr>
@@ -136,7 +135,7 @@
                   <td><%=h order.id %></td>
                   <td><%=h order.description %></td>
                   <td><%=h order.order_date %></td>
-                  <td><%=h order.total_value %></td>
+                  <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
                   <td><%=h order.delivery_date %></td>
                   <td><%=h order.order_status.description %></td>
                 </tr>
