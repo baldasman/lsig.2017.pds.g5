@@ -12,7 +12,7 @@
           <tbody>
           <tr>
             <td><%= @order.description %></td>
-            <td><%= @order.total_value %></td>
+            <td><%= number_to_currency(@order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
             <td><%= @order.delivery_date.strftime('%d-%m-%Y') rescue nil %></td>
           </tr>
           </tbody>
@@ -41,12 +41,11 @@
 
       <div class="actions" align="center">
         <!-- Delete button -->
-       <li> <%= button_to 'Delete', client_area_destroy_order_path(order_id: @order.id), method: 'POST'%>
+        <%= button_to 'Delete', client_area_destroy_order_path(order_id: @order.id), method: 'POST'%>
         <!-- Edit button -->
         <%= button_to 'Edit', client_area_edit_order_path(order_id: @order.id) %>
         <!-- Cancel button -->
         <%= button_to 'Cancel', client_area_index_path %>
-       </li>
       </div>
 
 </div>

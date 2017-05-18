@@ -62,7 +62,7 @@
             <tbody>
             <% @pending_orders.each do |order| %>
                 <tr>
-                  <td><%=h order.id %></td>
+                  <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
                   <td><%=h order.description %></td>
                   <td><%=h order.order_date %></td>
                   <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
@@ -91,7 +91,7 @@
             <tbody>
             <% @cancelled_orders.each do |order| %>
                 <tr>
-                  <td><%=h order.id %></td>
+                  <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
                   <td><%=h order.description %></td>
                   <td><%=h order.order_date %></td>
                   <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
@@ -120,7 +120,7 @@
             <tbody>
             <% @completed_orders.each do |order| %>
                 <tr>
-                  <td><%=h order.id %></td>
+                  <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
                   <td><%=h order.description %></td>
                   <td><%=h order.order_date %></td>
                   <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>

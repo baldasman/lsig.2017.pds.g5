@@ -1,4 +1,5 @@
 <div class="container-fluid">
+    <%= csrf_meta_tags %>
     <%= form_for @order, :url => url_for(:controller => 'client_area', :action => 'save_order'), html: {class: 'container-fluid'} do |f| %>
   <h2>New Order</h2>
   <div class="container">
