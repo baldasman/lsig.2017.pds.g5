@@ -82,3 +82,12 @@ en:
   delivery_date: "Delivery Date"
   select_file: "Select File"
   observations: "Observations"
+
+  pend_ord: "Pending Orders"
+  cancel_ord: "Canceled Orders"
+  completed_ord: "Completed Orders"
+  all_ord: "All Orders"
+  made_ord: "Orders Made"
+  ord_status: "Order Status"
+  ord_date: "Order Date"
+  ord_id: "Order ID"

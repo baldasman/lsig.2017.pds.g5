@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>My Orders</h2>
+  <h2><%= t('my_orders') %></h2>
   <div class="actions" align="right">
     <%= link_to '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> New Order</button>'.html_safe, client_area_new_order_path %>
     <%= form_tag('/search', method: 'get') do %>
@@ -9,25 +9,25 @@
     <% end %>
   </div>
   <ul class="nav nav-tabs">
-    <li><a data-toggle="tab" href="#menu1">Pending Orders</a></li>
-    <li><a data-toggle="tab" href="#menu2">Canceled Orders</a></li>
-    <li><a data-toggle="tab" href="#menu3">Completed Orders</a></li>
-    <li class="active"><a data-toggle="tab" href="#home">All Orders</a></li>
+    <li><a data-toggle="tab" href="#menu1"><%= t('pend_ord') %></a></li>
+    <li><a data-toggle="tab" href="#menu2"><%= t('cancel_ord') %></a></li>
+    <li><a data-toggle="tab" href="#menu3"><%= t('completed_ord') %></a></li>
+    <li class="active"><a data-toggle="tab" href="#home"><%= t('all_ord') %></a></li>
   </ul>
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h3>Orders Made</h3>
+      <h3><%= t('made_ord') %></h3>
       <div class="container">
           <table class="table table-hover">
             <thead>
             <tr>
-              <th>Order ID</th>
-              <th>Description</th>
-              <th>Order Date</th>
-              <th>Total Value</th>
-              <th>Delivery Date</th>
-              <th>Order Status</th>
+              <th><%= t('ord_id') %></th>
+              <th><%= t('description')%></th>
+              <th><%= t('ord_date') %></th>
+              <th><%= t('total_value') %></th>
+              <th><%= t('delivery_date') %></th>
+              <th><%= t('ord_status') %></th>
             </tr>
             </thead>
             <tbody>
@@ -46,17 +46,17 @@
       </div>
     </div>
     <div id="menu1" class="tab-pane fade">
-      <h3>Pending Orders</h3>
+      <h3><%= t('pend_ord') %></h3>
       <div class="container">
           <table class="table table-hover">
             <thead>
             <tr>
-              <th>Order ID</th>
-              <th>Description</th>
-              <th>Order Date</th>
-              <th>Total Value</th>
-              <th>Delivery Date</th>
-              <th>Order Status</th>
+              <th><%= t('ord_id') %></th>
+              <th><%= t('description')%></th>
+              <th><%= t('ord_date') %></th>
+              <th><%= t('total_value') %></th>
+              <th><%= t('delivery_date') %></th>
+              <th><%= t('ord_status') %></th>
             </tr>
             </thead>
             <tbody>
@@ -75,17 +75,17 @@
       </div>
     </div>
     <div id="menu2" class="tab-pane fade">
-      <h3>Orders Canceled</h3>
+      <h3><%= t('cancel_ord')%></h3>
       <div class="container">
           <table class="table table-hover">
             <thead>
             <tr>
-              <th>Order ID</th>
-              <th>Description</th>
-              <th>Order Date</th>
-              <th>Total Value</th>
-              <th>Delivery Date</th>
-              <th>Order Status</th>
+              <th><%= t('ord_id') %></th>
+              <th><%= t('description')%></th>
+              <th><%= t('ord_date') %></th>
+              <th><%= t('total_value') %></th>
+              <th><%= t('delivery_date') %></th>
+              <th><%= t('ord_status') %></th>
             </tr>
             </thead>
             <tbody>
@@ -104,17 +104,17 @@
       </div>
     </div>
     <div id="menu3" class="tab-pane fade">
-      <h3>Completed Orders</h3>
+      <h3><%= t('completed_ord') %></h3>
       <div class="container">
           <table class="table table-hover">
             <thead>
             <tr>
-              <th>Order ID</th>
-              <th>Description</th>
-              <th>Order Date</th>
-              <th>Total Value</th>
-              <th>Delivery Date</th>
-              <th>Order Status</th>
+              <th><%= t('ord_id') %></th>
+              <th><%= t('description')%></th>
+              <th><%= t('ord_date') %></th>
+              <th><%= t('total_value') %></th>
+              <th><%= t('delivery_date') %></th>
+              <th><%= t('ord_status') %></th>
             </tr>
             </thead>
             <tbody>
