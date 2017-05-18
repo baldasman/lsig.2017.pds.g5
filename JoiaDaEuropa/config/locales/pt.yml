@@ -28,4 +28,5 @@
     completed: "Concluída"
   save: "Guardar"
   cancel: "Cancelar"
+  delete: "Eliminar"
   select_invoice: "Selecione Fatura"
