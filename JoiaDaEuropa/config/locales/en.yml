@@ -29,3 +29,5 @@ en:
     completed: "Concluded"
   save: "Save"
   cancel: "Cancel"
+  delete: "Delete"
+  select_invoice: "Select Invoice"

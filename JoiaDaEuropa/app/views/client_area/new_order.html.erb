@@ -31,7 +31,7 @@
       </thead>
       <tbody>
       <tr>
-        <td><div><%= f.select(:reference_id, options_for_select([['Selecione fatura', nil]].concat(@old_orders.map{ |o| [o.description, o.id]}) )) %></div></td>
+        <td><div><%= f.select(:reference_id, options_for_select([[t('select_invoice'), nil]].concat(@old_orders.map{ |o| [o.description, o.id]}) )) %></div></td>
         <td><%= f.file_field :type %></td>
         <td><%= f.text_area :obs %></td>
       </tr>
@@ -42,8 +42,8 @@
   <div class="actions" align="center">
   <%= f.submit t('save') %>
 
-  <!-- Cancel button -->
-    <%= button_to 'Cancel', client_area_index_path %>
+
+    <%= button_to t('cancel'), client_area_index_path %>
   </div>
 
 
