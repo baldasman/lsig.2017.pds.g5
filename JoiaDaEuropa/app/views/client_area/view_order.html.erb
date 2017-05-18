@@ -12,7 +12,7 @@
           <tbody>
           <tr>
             <td><%= @order.description %></td>
-            <td><%= @order.total_value %></td>
+            <td><%= number_to_currency(@order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
             <td><%= @order.delivery_date.strftime('%d-%m-%Y') rescue nil %></td>
           </tr>
           </tbody>
@@ -22,7 +22,7 @@
         <table class="table">
           <thead>
           <trrail>
-            <th>Reference</th>
+            <th>Invoice Reference</th>
             <th>Select File</th>
             <th>Observations</th>
           </trrail>
