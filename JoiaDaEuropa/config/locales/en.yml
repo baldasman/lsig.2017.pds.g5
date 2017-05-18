@@ -51,4 +51,17 @@ en:
   previous: "Previous"
   next: "Next"
 
+  edit: "Edit"
+  waiting_for_confirmation: "Currently waiting confirmation for:"
+  blank: "(leave blank if you don't want to change it)"
+
+  characters_minimum: "Characters Minimum"
+  pass_confirm: "Password Confirmation"
+  cur_pass_confirm:  "(Insert current password to confirm your changes)"
+  cur_pass: "Current Password"
+  update: "Update"
+  unhappy: "Are you unhappy?"
+  cancel_account: "Cancel my account"
+  back: "Back"
+
 
