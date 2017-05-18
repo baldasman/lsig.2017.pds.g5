@@ -34,16 +34,22 @@
         </div>
 
         <br>
-        <div class="actions">
-          <%= f.submit "Update", class: "btn btn-large btn-primary" %>
+        <div class="actions" align="center">
+          <%= f.submit "Update", class: "btn btn-large btn-primary btn-block" %>
         </div>
   <% end %>
 
-  <h3>Cancel my account</h3>
+  <br>
+  <br>
 
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-large btn-primary" %></p>
+  <center><h3>Cancel my account</h3></center>
 
-  <%= link_to "Back", :back %>
+  <div align="center">
+    <p>Are you unhappy? </p>
+      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-primary btn-xs" %>
+  </div>
+  <br>
+  <center><%= link_to "Back", :back %> </center>
 
   </div>
 </div>

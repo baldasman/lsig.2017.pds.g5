@@ -84,8 +84,14 @@ h3, h4 {
     color: navy;
 }
 
+.btn-xs {
+    border: 1px solid navy;
+    background-color: #fff;
+    color: navy;
+}
+
 .modal-header, h4, .close {
-    background-color: #333;
+    background-color: navy;
     color: #fff !important;
     text-align: center;
     font-size: 30px;
@@ -130,9 +136,15 @@ h3, h4 {
 .navbar-default .navbar-toggle {
     border-color: transparent;
 }
+
+.dropdown{
+    font-family: "Lucida Grande", sans-serif;
+}
+
 .open .dropdown-toggle {
     color: #fff;
     background-color: navy !important;
+    font-family: "Lucida Grande", sans-serif;
 }
 .dropdown-menu li a {
     color: navy !important;
@@ -145,6 +157,7 @@ h3, h4 {
     border-radius: 0;
 
 }
+
 textarea {
     border: 2px solid;
     padding: 20px;
