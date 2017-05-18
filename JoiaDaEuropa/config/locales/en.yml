@@ -66,4 +66,12 @@ en:
 
   sign_up: "Sign Up"
 
+  sign_in: "Sign In"
+
+  remember_me: "Remember me"
+  log_in: "Log in"
+  forgot_pass: "Forgot your password?"
+  not_rec_confirm_links: "Didn't receive confirmation instructions?"
+  not_rec_unlock_links: "Didn't receive unlock instructions?"
+
 

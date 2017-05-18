@@ -1,11 +1,11 @@
 <!-- For  logging in a user and creating the session for them-->
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_user_session_path(resource_name) %><br />
+  <%= link_to t('log_in'), new_user_session_path(resource_name) %><br />
 <% end -%>
 
 <!-- For signing up a user with the application -->
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+  <%= link_to t('sign_up'), new_registration_path(resource_name) %><br />
 <% end -%>
 
 <!-- For recovering forgotten passwords  -->
@@ -15,11 +15,11 @@
 
 <!-- For confirming email addresses -->
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+  <%= link_to t('not_rec_confirm_links'), new_confirmation_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+  <%= link_to t('not_rec_unlock_links'), new_unlock_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>

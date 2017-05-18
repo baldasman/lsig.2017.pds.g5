@@ -62,3 +62,11 @@
   back: "Voltar atrás"
 
   sign_up: "Registar"
+
+  sign_in: "Entrar"
+
+  remember_me: "Lembrar-me"
+  log_in: "Entrar"
+  forgot_pass: "Esqueceu a sua password?"
+  not_rec_confirm_links: "Não recebeu os seus links de confirmação?"
+  not_rec_unlock_links: "Não recebeu os seus links de desbloqueio?"
