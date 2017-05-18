@@ -108,7 +108,7 @@ h3, h4 {
 .btn:hover, .btn:focus {
     border: 1px solid #333;
     background-color: #fff;
-    color: #000;
+    color: navy;
 }
 .modal-header, h4, .close {
     background-color: #333;
