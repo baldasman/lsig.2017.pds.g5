@@ -91,3 +91,6 @@ en:
   ord_status: "Order Status"
   ord_date: "Order Date"
   ord_id: "Order ID"
+
+  new_ord: "New Order"
+  invoice_ref: "Invoice Reference"

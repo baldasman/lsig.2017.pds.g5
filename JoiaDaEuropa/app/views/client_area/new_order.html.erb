@@ -1,14 +1,14 @@
 <div class="container-fluid">
     <%= csrf_meta_tags %>
     <%= form_for @order, :url => url_for(:controller => 'client_area', :action => 'save_order'), html: {class: 'container-fluid'} do |f| %>
-  <h2>New Order</h2>
+  <h2><%= t('new_ord')%></h2>
   <div class="container">
       <table class="table">
       <thead>
       <tr>
-        <th>Description</th>
-        <th>Total value</th>
-        <th>Delivery Date</th>
+        <th><%= t('description')%></th>
+        <th><%= t('total_value') %></th>
+        <th><%= t('delivery_date') %></th>
       </tr>
       </thead>
       <tbody>
@@ -24,9 +24,9 @@
     <table class="table">
       <thead>
       <trrail>
-        <th>Invoice Reference</th>
-        <th>Select File</th>
-        <th>Observations</th>
+        <th><%= t('invoice_ref')%></th>
+        <th><%= t('select_file')%></th>
+        <th><%= t('observations')%></th>
       </trrail>
       </thead>
       <tbody>

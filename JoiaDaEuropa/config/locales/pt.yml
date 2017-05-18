@@ -87,3 +87,6 @@
   ord_status: "Estado da Encomenda"
   ord_date: "Data de Encomenda"
   ord_id: "ID de Encomenda"
+
+  new_ord: "Nova Encomenda"
+  invoice_ref: "Referêcia da Fatura"
