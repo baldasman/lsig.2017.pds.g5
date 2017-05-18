@@ -42,13 +42,14 @@ h3, h4 {
     color: navy;
 }
 .container {
-    padding: 40px 120px;
+    padding: 40px 0px;
 }
 
 .carousel {
     height: 700px;
     margin-bottom: 60px;
 }
+
 .carousel-inner img {
     -webkit-filter: grayscale(90%);
     filter: grayscale(90%); /* make all photos black and white */
@@ -64,16 +65,7 @@ h3, h4 {
         display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
     }
 }
-.bg-1 {
-    background: #2d2d30;
-    color: #bdbdbd;
-}
-.bg-1 h3 {color: #fff;}
-.bg-1 p {font-style: italic;}
-.list-group-item:first-child {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-}
+
 .list-group-item:last-child {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -83,7 +75,7 @@ h3, h4 {
     padding: 10px 20px;
     background-color: navy;
     color: #f1f1f1;
-    border-radius: 0;
+    border-radius: 5px;
     transition: .2s;
 }
 .btn:hover, .btn:focus {
