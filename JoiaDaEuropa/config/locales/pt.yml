@@ -70,3 +70,12 @@
   forgot_pass: "Esqueceu a sua password?"
   not_rec_confirm_links: "Não recebeu os seus links de confirmação?"
   not_rec_unlock_links: "Não recebeu os seus links de desbloqueio?"
+
+  ##my orders
+  #edit
+  order: "Encomenda"
+  description: "Descrição"
+  total_value: "Valor Total"
+  delivery_date: "Data de Entrega"
+  select_file: "Selecione Ficheiro"
+  observations: "Observações"
