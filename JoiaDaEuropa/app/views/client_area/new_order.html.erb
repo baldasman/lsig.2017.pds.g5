@@ -1,21 +1,21 @@
 <div class="container-fluid">
+    <%= csrf_meta_tags %>
     <%= form_for @order, :url => url_for(:controller => 'client_area', :action => 'save_order'), html: {class: 'container-fluid'} do |f| %>
   <h2>New Order</h2>
-
   <div class="container">
       <table class="table">
       <thead>
       <tr>
+        <th>Description</th>
         <th>Total value</th>
-        <th></th>
         <th>Delivery Date</th>
       </tr>
       </thead>
       <tbody>
       <tr>
+          <td><%= f.text_field :description %></td>
           <td><%= f.text_field :total_value %></td>
-          <td></td>
-          <td><%= f.text_field :delivery_date, :id => 'datepicker', :value => Date.today %></td>
+          <td><%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today.strftime('%d-%m-%Y'), :class => 'input-group date form-control' %></td>
       </tr>
       </tbody>
       </table>
@@ -23,14 +23,16 @@
     <br>
     <table class="table">
       <thead>
-      <tr>
+      <trrail>
+        <th>Invoice Reference</th>
         <th>Select File</th>
         <th>Observations</th>
-      </tr>
+      </trrail>
       </thead>
       <tbody>
       <tr>
-        <td><input type="file" class="file"></td>
+        <td><div><%= f.select(:reference_id, options_for_select([['Selecione fatura', nil]].concat(@old_orders.map{ |o| [o.description, o.id]}) )) %></div></td>
+        <td><%= f.file_field :type %></td>
         <td><%= f.text_area :obs %></td>
       </tr>
       </tbody>
@@ -40,8 +42,8 @@
   <div class="actions" align="center">
   <%= f.submit t('save') %>
 
-  <!-- cancel button -->
-
+  <!-- Cancel button -->
+    <%= button_to 'Cancel', client_area_index_path %>
   </div>
 
 
@@ -49,7 +51,11 @@
   </div>
 
 
-  <script>
-      $('#datepicker').datepicker({format: 'dd-mm-yyyy'});
-  </script>
-
+<script type="text/javascript">
+    $(function () {
+        $('#delivery_date').datepicker({
+            defaultDate: "now",
+            format: 'dd-mm-yyyy'
+        });
+    });
+</script>

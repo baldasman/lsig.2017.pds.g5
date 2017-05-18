@@ -1,5 +1,6 @@
 <div class="container-fluid">
-      <h2>My Order #<%= @order.id %></h2>
+  <%= form_for @order, :url => url_for(:controller => 'client_area', :action => 'save_order'), html: {class: 'container-fluid'}, :method => :POST do |f| %>
+      <h2>Order #<%= @order.id %></h2>
       <div class="container">
         <table class="table">
           <thead>
@@ -11,9 +12,9 @@
           </thead>
           <tbody>
           <tr>
-            <td><%= @order.description %></td>
-            <td><%= number_to_currency(@order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
-            <td><%= @order.delivery_date.strftime('%d-%m-%Y') rescue nil %></td>
+            <td><%= f.text_field :description %></td>
+            <td><%= f.text_field :total_value %></td>
+            <td><%= f.text_field :delivery_date, id: 'delivery_date', :value => Date.today, :class => 'input-group date form-control' %></td>
           </tr>
           </tbody>
         </table>
@@ -22,32 +23,36 @@
         <table class="table">
           <thead>
           <trrail>
-            <th>Reference</th>
             <th>Select File</th>
             <th>Observations</th>
           </trrail>
           </thead>
           <tbody>
           <tr>
-            <td><% if @old_order %>
-                  <%= @old_order.description %>
-              <% end %></td>
             <td><input type="file" class="file"></td>
-            <td><%= @order.obs %></td>
+            <td><%= f.text_area :obs %></td>
           </tr>
           </tbody>
         </table>
       </div>
 
       <div class="actions" align="center">
-        <!-- Delete button -->
-        <%= button_to 'Delete', client_area_destroy_order_path(order_id: @order.id), method: 'POST'%>
-        <!-- Edit button -->
-        <%= button_to 'Edit', client_area_edit_order_path(order_id: @order.id) %>
+        <%= f.submit t('save') %>
+
         <!-- Cancel button -->
         <%= button_to 'Cancel', client_area_index_path %>
       </div>
 
+
+  <% end %>
 </div>
 
 
+<script type="text/javascript">
+    $(function () {
+        $('#delivery_date').datetimepicker({
+            defaultDate: "now",
+            format: 'DD-mm-YYYY'
+        });
+    });
+</script>

@@ -43,12 +43,7 @@ h3, h4 {
     color: #111;
 }
 .container {
-<<<<<<< Updated upstream
     padding: 80px 30px;
-=======
-    padding: 80px 10px;
-
->>>>>>> Stashed changes
 }
 .person {
     border: 10px solid transparent;
@@ -65,7 +60,7 @@ h3, h4 {
     margin-bottom: 60px;
 }
 .carousel-inner img {
-    -webkit-filter: grayscale(100%);
+    -webkit-filter: grayscale(90%);
     filter: grayscale(90%); /* make all photos black and white */
     width: 100%; /* Set width to 100% */
     margin: auto;
