@@ -22,6 +22,8 @@
 "pt":
   hello: "Hello world"
   my_account: "A minha conta"
+  email: "O meu email"
+  email_tag: "Email"
   order_status:
     pending: "Pendente"
     cancelled: "Cancelada"
@@ -45,6 +47,7 @@
   my_orders: "As minhas encomendas"
   sign_out: "Sair"
   account: "Conta"
+  name: "Nome"
 
   previous: "Anterior"
   next: "Seguinte"

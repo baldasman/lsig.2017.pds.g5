@@ -23,6 +23,7 @@ en:
   hello: "Hello world"
   my_account: "My account"
   email: "My email"
+  email_tag: "Email"
   order_status:
     pending: "Pending"
     cancelled: "Cancelled"
@@ -46,7 +47,7 @@ en:
   my_orders: "My Orders"
   sign_out: "Sign Out"
   account: "Account"
-
+  name: "Name"
 
   previous: "Previous"
   next: "Next"
