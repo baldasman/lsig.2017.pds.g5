@@ -19,7 +19,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-"pt-PT":
+"pt":
   hello: "Hello world"
   my_account: "A minha conta"
   order_status:
