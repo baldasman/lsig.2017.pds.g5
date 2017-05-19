@@ -96,3 +96,8 @@
 
   new_ord: "Nova Encomenda"
   invoice_ref: "Referêcia da Fatura"
+
+
+##backoffice
+  orders: "Encomendas"
+  appr_ord: "Encomendas Aprovadas"

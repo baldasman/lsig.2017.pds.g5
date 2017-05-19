@@ -99,3 +99,8 @@ en:
 
   new_ord: "New Order"
   invoice_ref: "Invoice Reference"
+
+  ##backoffice
+
+  orders: "Orders"
+  appr_ord: "Approved Orders"
