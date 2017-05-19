@@ -20,20 +20,6 @@ ActiveRecord::Schema.define(version: 20170516104143) do
     t.index ["user_id"], name: "index_accounts_on_user_id", using: :btree
   end
 
-  create_table "client_area_order_states", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "client_area_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "date"
-    t.decimal  "total",      precision: 10
-    t.integer  "state_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
   create_table "order_files", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.binary   "type",       limit: 65535
     t.string   "path"

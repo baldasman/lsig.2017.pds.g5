@@ -41,12 +41,11 @@
 
       <div class="actions" align="center">
         <!-- Delete button -->
-       <li> <%= button_to t('delete'), client_area_destroy_order_path(order_id: @order.id), method: 'POST'%>
+        <li> <%= button_to t('delete'), client_area_destroy_order_path(order_id: @order.id), method: 'POST'%></li>
         <!-- Edit button -->
-        <%= button_to t('edit'), client_area_edit_order_path(order_id: @order.id) %>
+        <li><%= button_to t('edit'), client_area_edit_order_path(order_id: @order.id) %></li>
         <!-- Cancel button -->
-        <%= button_to t('cancel'), client_area_index_path %>
-       </li>
+        <li><%= button_to t('cancel'), client_area_index_path %></li>
       </div>
 
 </div>

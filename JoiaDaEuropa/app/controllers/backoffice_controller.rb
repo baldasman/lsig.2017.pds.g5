@@ -2,17 +2,8 @@ class BackofficeController < ApplicationController
 
   before_filter :authorized?
 
-  private
-
-  def authorized?
-    if current_user
-      @accounts = User.where(id: current_user.id)
-      @accounts.find_by(is_client: '0')
-    end
-  end
-
   def index
-    
+
     @account = current_user
     @orders = Order.all
 
@@ -26,7 +17,7 @@ class BackofficeController < ApplicationController
   def check_order
 
     @order = Order.find_by(id: params[:order_id])
-    
+
     @old_order = Order.find_by(id: @order.reference_id) if @order.reference_id
   end
 
@@ -44,6 +35,15 @@ class BackofficeController < ApplicationController
       redirect_to backoffice_order_path
     end
     redirect_to backoffice_index_path
+  end
+
+  private
+
+  def authorized?
+    if current_user
+      @accounts = User.where(id: current_user.id)
+      @accounts.find_by(is_client: '0')
+    end
   end
 
 end
