@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <%= form_for @order, :url => url_for(:controller => 'client_area', :action => 'save_order'), html: {class: 'container-fluid'}, :method => :POST do |f| %>
-      <h2><%= t('order')%> #<%= @order.id %></h2>
+        <%= f.hidden_field :id %>
+
+        <h2><%= t('order')%> #<%= @order.id %></h2>
       <div class="container">
         <table class="table">
           <thead>
@@ -40,7 +42,7 @@
         <%= f.submit t('save') %>
 
         <!-- Cancel button -->
-        <%= button_to t('cancel'), client_area_index_path %>
+        <%= link_to t('cancel'), client_area_view_order_path(@order.id) %>
       </div>
 
 

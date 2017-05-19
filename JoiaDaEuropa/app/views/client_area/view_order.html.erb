@@ -32,20 +32,24 @@
             <td><% if @old_order %>
                   <%= @old_order.description %>
               <% end %></td>
-            <td><input type="file" class="file"></td>
+            <td>
+                <% if @order.order_file %>
+                <a href="/uploads/<%= @order.order_file.path %>" target="_blank">Anexo</a>
+                <% end %>
+            </td>
             <td><%= @order.obs %></td>
           </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="actions" align="center">
+      <div class="actions">
         <!-- Delete button -->
-        <li> <%= button_to t('delete'), client_area_destroy_order_path(order_id: @order.id), method: 'POST'%></li>
+        <%= button_to t('delete'), client_area_destroy_order_path(order_id: @order.id), method: :post, class: 'btn btn-danger' %>
         <!-- Edit button -->
-        <li><%= button_to t('edit'), client_area_edit_order_path(order_id: @order.id) %></li>
+        <%= link_to t('edit'), client_area_edit_order_path(order_id: @order.id), class: 'btn btn-primary' %>
         <!-- Cancel button -->
-        <li><%= button_to t('cancel'), client_area_index_path %></li>
+        <%= link_to t('back'), client_area_index_path, class: 'btn btn-default' %>
       </div>
 
 </div>

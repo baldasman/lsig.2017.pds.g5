@@ -1,135 +1,143 @@
 <div class="container">
-  <h2><%= t('my_orders') %></h2>
-  <div class="actions" align="right">
-    <%= link_to '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> New Order</button>'.html_safe, client_area_new_order_path %>
-    <%= form_tag('/search', method: 'get') do %>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag t('search_for') %>
-    <% end %>
-  </div>
-  <ul class="nav nav-tabs">
-    <li><a data-toggle="tab" href="#menu1"><%= t('pend_ord') %></a></li>
-    <li><a data-toggle="tab" href="#menu2"><%= t('cancel_ord') %></a></li>
-    <li><a data-toggle="tab" href="#menu3"><%= t('completed_ord') %></a></li>
-    <li class="active"><a data-toggle="tab" href="#home"><%= t('all_ord') %></a></li>
-  </ul>
+    <h2><%= t('my_orders') %></h2>
 
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3><%= t('made_ord') %></h3>
-      <div class="container">
-          <table class="table table-hover">
-            <thead>
-            <tr>
-              <th><%= t('ord_id') %></th>
-              <th><%= t('description')%></th>
-              <th><%= t('ord_date') %></th>
-              <th><%= t('total_value') %></th>
-              <th><%= t('delivery_date') %></th>
-              <th><%= t('ord_status') %></th>
-            </tr>
-            </thead>
-            <tbody>
-            <% @orders.each do |order| %>
-                <tr>
-                  <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
-                  <td><%=h order.description %></td>
-                  <td><%=h order.order_date %></td>
-                  <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
-                  <td><%=h order.delivery_date %></td>
-                  <td><%=h order.order_status.description %></td>
-                </tr>
+    <div class="container">
+        <div class="actions pull-left">
+            <%= form_tag(client_area_index_path, method: 'get') do %>
+                <%= text_field_tag(:q, @search, autofocus: true, placeholder: t('search_for')) %>
+                <%= submit_tag t('search_for') %>
             <% end %>
-            </tbody>
-          </table>
-      </div>
+        </div>
+
+        <div class="actions pull-right">
+            <%= link_to '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> New Order</button>'.html_safe, client_area_new_order_path %>
+        </div>
     </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3><%= t('pend_ord') %></h3>
-      <div class="container">
-          <table class="table table-hover">
-            <thead>
-            <tr>
-              <th><%= t('ord_id') %></th>
-              <th><%= t('description')%></th>
-              <th><%= t('ord_date') %></th>
-              <th><%= t('total_value') %></th>
-              <th><%= t('delivery_date') %></th>
-              <th><%= t('ord_status') %></th>
-            </tr>
-            </thead>
-            <tbody>
-            <% @pending_orders.each do |order| %>
-                <tr>
-                  <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
-                  <td><%=h order.description %></td>
-                  <td><%=h order.order_date %></td>
-                  <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
-                  <td><%=h order.delivery_date %></td>
-                  <td><%=h order.order_status.description %></td>
-                </tr>
-            <% end %>
-            </tbody>
-          </table>
-      </div>
+
+
+    <ul class="nav nav-tabs">
+        <li><a data-toggle="tab" href="#menu1"><%= t('pend_ord') %></a></li>
+        <li><a data-toggle="tab" href="#menu2"><%= t('cancel_ord') %></a></li>
+        <li><a data-toggle="tab" href="#menu3"><%= t('completed_ord') %></a></li>
+        <li class="active"><a data-toggle="tab" href="#home"><%= t('all_ord') %></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h3><%= t('made_ord') %></h3>
+            <div class="container">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th><%= t('ord_id') %></th>
+                        <th><%= t('description') %></th>
+                        <th><%= t('ord_date') %></th>
+                        <th><%= t('total_value') %></th>
+                        <th><%= t('delivery_date') %></th>
+                        <th><%= t('ord_status') %></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% @orders.each do |order| %>
+                        <tr>
+                            <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
+                            <td><%= h order.description %></td>
+                            <td><%= h order.order_date %></td>
+                            <td><%= h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
+                            <td><%= h order.delivery_date %></td>
+                            <td><%= h order.order_status.description %></td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <h3><%= t('pend_ord') %></h3>
+            <div class="container">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th><%= t('ord_id') %></th>
+                        <th><%= t('description') %></th>
+                        <th><%= t('ord_date') %></th>
+                        <th><%= t('total_value') %></th>
+                        <th><%= t('delivery_date') %></th>
+                        <th><%= t('ord_status') %></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% @pending_orders.each do |order| %>
+                        <tr>
+                            <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
+                            <td><%= h order.description %></td>
+                            <td><%= h order.order_date %></td>
+                            <td><%= h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
+                            <td><%= h order.delivery_date %></td>
+                            <td><%= h order.order_status.description %></td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3><%= t('cancel_ord') %></h3>
+            <div class="container">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th><%= t('ord_id') %></th>
+                        <th><%= t('description') %></th>
+                        <th><%= t('ord_date') %></th>
+                        <th><%= t('total_value') %></th>
+                        <th><%= t('delivery_date') %></th>
+                        <th><%= t('ord_status') %></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% @cancelled_orders.each do |order| %>
+                        <tr>
+                            <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
+                            <td><%= h order.description %></td>
+                            <td><%= h order.order_date %></td>
+                            <td><%= h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
+                            <td><%= h order.delivery_date %></td>
+                            <td><%= h order.order_status.description %></td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="menu3" class="tab-pane fade">
+            <h3><%= t('completed_ord') %></h3>
+            <div class="container">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th><%= t('ord_id') %></th>
+                        <th><%= t('description') %></th>
+                        <th><%= t('ord_date') %></th>
+                        <th><%= t('total_value') %></th>
+                        <th><%= t('delivery_date') %></th>
+                        <th><%= t('ord_status') %></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% @completed_orders.each do |order| %>
+                        <tr>
+                            <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
+                            <td><%= h order.description %></td>
+                            <td><%= h order.order_date %></td>
+                            <td><%= h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
+                            <td><%= h order.delivery_date %></td>
+                            <td><%= h order.order_status.description %></td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3><%= t('cancel_ord')%></h3>
-      <div class="container">
-          <table class="table table-hover">
-            <thead>
-            <tr>
-              <th><%= t('ord_id') %></th>
-              <th><%= t('description')%></th>
-              <th><%= t('ord_date') %></th>
-              <th><%= t('total_value') %></th>
-              <th><%= t('delivery_date') %></th>
-              <th><%= t('ord_status') %></th>
-            </tr>
-            </thead>
-            <tbody>
-            <% @cancelled_orders.each do |order| %>
-                <tr>
-                  <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
-                  <td><%=h order.description %></td>
-                  <td><%=h order.order_date %></td>
-                  <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
-                  <td><%=h order.delivery_date %></td>
-                  <td><%=h order.order_status.description %></td>
-                </tr>
-            <% end %>
-            </tbody>
-          </table>
-      </div>
-    </div>
-    <div id="menu3" class="tab-pane fade">
-      <h3><%= t('completed_ord') %></h3>
-      <div class="container">
-          <table class="table table-hover">
-            <thead>
-            <tr>
-              <th><%= t('ord_id') %></th>
-              <th><%= t('description')%></th>
-              <th><%= t('ord_date') %></th>
-              <th><%= t('total_value') %></th>
-              <th><%= t('delivery_date') %></th>
-              <th><%= t('ord_status') %></th>
-            </tr>
-            </thead>
-            <tbody>
-            <% @completed_orders.each do |order| %>
-                <tr>
-                  <td><%= link_to order.id, client_area_view_order_path(order.id) %></td>
-                  <td><%=h order.description %></td>
-                  <td><%=h order.order_date %></td>
-                  <td><%=h number_to_currency(order.total_value, unit: '€', separator: ',', delimiter: '.') %></td>
-                  <td><%=h order.delivery_date %></td>
-                  <td><%=h order.order_status.description %></td>
-                </tr>
-            <% end %>
-            </tbody>
-          </table>
-      </div>
-    </div>
-  </div>
 </div>

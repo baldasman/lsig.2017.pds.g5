@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class ClientAreaController < ApplicationController
 
     before_action :authenticate_user!
@@ -5,7 +7,13 @@ class ClientAreaController < ApplicationController
     def index
 
         @account = current_user
-        @orders = Order.all
+        @search = params[:q]
+
+        if @search.blank?
+            @orders = Order.all
+        else
+            @orders = Order.where('description LIKE ?', "%#{@search}%")
+        end
 
         @pending_orders = Order.where(order_status_id: 1)
         @cancelled_orders = Order.where(order_status_id: 2)
@@ -46,12 +54,22 @@ class ClientAreaController < ApplicationController
             @order = Order.new user_id: current_user.id, order_status_id: 1
         end
 
-        @order = Order.new user_id: current_user.id, order_status_id: 1
         @order.description = _order[:description]
         @order.total_value = _order[:total_value]
         @order.delivery_date = _order[:delivery_date]
         @order.obs = _order[:obs]
         @order.reference_id = _order[:reference_id]
+
+
+        # upload file
+        _upload = _order[:file]
+        _filename = SecureRandom.hex + '_' + _upload.original_filename
+
+        @order.order_file = OrderFile.new path: _filename
+
+        File.open(Rails.root.join('public', 'uploads', _filename), 'wb') do |file|
+            file.write(_upload.read)
+        end
 
         if @order.save
             flash[:success] = 'Your order was successfully created!'
