@@ -1,28 +1,49 @@
 class BackofficeController < ApplicationController
 
   before_filter :authorized?
+
   private
+
   def authorized?
-    unless current_user.has_role? :admin
-      flash[:error] = "You are not authorized to view that page."
-      redirect_to root_path
+    if current_user
+      @accounts = User.where(id: current_user.id)
+      @accounts.find_by(is_client: '0')
     end
   end
 
   def index
+    
+    @account = current_user
+    @orders = Order.all
+
+    @pending_orders = Order.where(order_status_id: 1)
+    @cancelled_orders = Order.where(order_status_id: 2)
+    @concluded_orders = Order.where(order_status_id: 3)
+    @approved_orders = Order.where(order_status_id: 4)
 
   end
 
   def check_order
 
-  end
-  
-  def edit_order
-
+    @order = Order.find_by(id: params[:order_id])
+    
+    @old_order = Order.find_by(id: @order.reference_id) if @order.reference_id
   end
 
   def save_order
+    @order = Order.find_by(id: params[:order_id])
+    @order.order_status_id = '2'
+    @order.order_status_id = '3'
+    @order.order_status_id = '4'
 
+    if @order.save
+      flash[:success] = 'Your order was successfully created!'
+      redirect_to backoffice_index_path
+    else
+      flash[:error] = @order.errors.messages
+      redirect_to backoffice_order_path
+    end
+    redirect_to backoffice_index_path
   end
 
 end

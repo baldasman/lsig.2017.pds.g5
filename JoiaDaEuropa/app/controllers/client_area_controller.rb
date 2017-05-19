@@ -10,6 +10,7 @@ class ClientAreaController < ApplicationController
         @pending_orders = Order.where(order_status_id: 1)
         @cancelled_orders = Order.where(order_status_id: 2)
         @completed_orders = Order.where(order_status_id: 3)
+        @approved_orders = Order.where(order_status_id: 4)
 
     end
 
@@ -17,7 +18,7 @@ class ClientAreaController < ApplicationController
 
         @order = Order.new
 
-        @old_orders = Order.where(user_id: current_user.id, order_status_id: [1, 2, 3])
+        @old_orders = Order.where(user_id: current_user.id, order_status_id: [2])
 
     end
 
