@@ -40,9 +40,8 @@ class BackofficeController < ApplicationController
   private
 
   def authorized?
-    if current_user
-      @accounts = User.where(id: current_user.id)
-      @accounts.find_by(is_client: '0')
+    if current_user.is_client
+      redirect_to client_area_index_path and return
     end
   end
 

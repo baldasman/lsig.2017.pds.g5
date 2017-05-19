@@ -15,10 +15,10 @@ class ClientAreaController < ApplicationController
             @orders = Order.where('description LIKE ?', "%#{@search}%")
         end
 
-        @pending_orders = Order.where(order_status_id: 1)
-        @cancelled_orders = Order.where(order_status_id: 2)
-        @completed_orders = Order.where(order_status_id: 3)
-        @approved_orders = Order.where(order_status_id: 4)
+        @pending_orders = Order.where(user_id: current_user.id, order_status_id: 1)
+        @cancelled_orders = Order.where(user_id: current_user.id, order_status_id: 2)
+        @completed_orders = Order.where(user_id: current_user.id, order_status_id: 3)
+        @approved_orders = Order.where(user_id: current_user.id, order_status_id: 4)
 
     end
 
