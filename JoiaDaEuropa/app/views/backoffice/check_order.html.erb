@@ -31,8 +31,13 @@
       <tr>
         <td><% if @old_order %>
               <%= @old_order.description %>
-          <% end %></td>
-        <td><input type="file" class="file"></td>
+          <% end %>
+        </td>
+        <td>
+          <% if @order.order_file %>
+              <a href="/uploads/<%= @order.order_file.path %>" target="_blank">Anexo</a>
+          <% end %>
+        </td>
         <td><%= @order.obs %></td>
       </tr>
       </tbody>
@@ -41,13 +46,19 @@
 
   <div class="actions" align="center">
     <% @orders = Order.where(id: @order.id) %>
-    <% if @orders.find_by(order_state_id: '1') %>
-    <!-- Delete button -->
-    <li> <%= button_to t('cancel'), client_area_destroy_order_path(order_id: @order.id), method: 'POST'%></li>
-      <!-- Edit button -->
-    <li><%= button_to 'Accept', client_area_edit_order_path(order_id: @order.id) %></li>
-      <!-- Cancel button -->
-    <li><%= button_to 'Conclude', backoffice_index_path (order_id: @order.id) %></li>
+    <% if @orders.find_by(order_status_id: '1') %>
+        <!-- Accept button -->
+        <%= link_to 'Accept', backoffice_approve_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja aprovar esta encomenda?'}, class: 'btn btn-primary' %>
+        <!-- Cancel button -->
+        <%= link_to t('cancel'), backoffice_cancel_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja cancelar esta encomenda?'}, class: 'btn btn-danger' %>
+    <%end %>
+    <% if @orders.find_by(order_status_id: '4') %>
+        <!-- Conclude button -->
+        <%= link_to 'Conclude', backoffice_conclude_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja concluir esta encomenda?'}, class: 'btn btn-primary' %>
+    <%end %>
+        <!-- Back button -->
+        <%= link_to t('back'), backoffice_index_path, class: 'btn btn-default' %>
+
   </div>
 
 </div>

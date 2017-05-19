@@ -31,7 +31,8 @@
           <tr>
             <td><% if @old_order %>
                   <%= @old_order.description %>
-              <% end %></td>
+              <% end %>
+            </td>
             <td>
                 <% if @order.order_file %>
                 <a href="/uploads/<%= @order.order_file.path %>" target="_blank">Anexo</a>
@@ -45,10 +46,10 @@
 
       <div class="actions">
         <!-- Delete button -->
-        <%= button_to t('delete'), client_area_destroy_order_path(order_id: @order.id), method: :post, class: 'btn btn-danger' %>
+        <%= link_to t('delete'), client_area_destroy_order_path(order_id: @order.id), method: :post, class: 'btn btn-danger' %>
         <!-- Edit button -->
         <%= link_to t('edit'), client_area_edit_order_path(order_id: @order.id), class: 'btn btn-primary' %>
-        <!-- Cancel button -->
+        <!-- Back button -->
         <%= link_to t('back'), client_area_index_path, class: 'btn btn-default' %>
       </div>
 

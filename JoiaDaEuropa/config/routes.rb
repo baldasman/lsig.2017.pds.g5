@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     get '/client_area/new_order'
     get '/client_area/save_order'
     get 'backoffice/index'
-    get 'backoffice/save_order'
 
     get '/client_area/view_order/:order_id', to: 'client_area#view_order', as: 'client_area_view_order'
     get '/client_area/edit_order/:order_id', to: 'client_area#edit_order', as: 'client_area_edit_order'
@@ -17,7 +16,9 @@ Rails.application.routes.draw do
 
     post '/client_area/save_order'
     post '/client_area/destroy_order'
-    post 'backoffice/save_order'
+    post 'backoffice/cancel_order'
+    post 'backoffice/approve_order'
+    post 'backoffice/conclude_order'
 
     root to: 'home#index'
 

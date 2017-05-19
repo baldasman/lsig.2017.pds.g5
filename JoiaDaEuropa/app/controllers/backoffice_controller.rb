@@ -19,22 +19,34 @@ class BackofficeController < ApplicationController
     @order = Order.find_by(id: params[:order_id])
 
     @old_order = Order.find_by(id: @order.reference_id) if @order.reference_id
+
   end
 
-  def save_order
-    @order = Order.find_by(id: params[:order_id])
-    @order.order_status_id = '2'
-    @order.order_status_id = '3'
-    @order.order_status_id = '4'
+  def approve_order
 
-    if @order.save
-      flash[:success] = 'Your order was successfully created!'
-      redirect_to backoffice_index_path
-    else
-      flash[:error] = @order.errors.messages
-      redirect_to backoffice_order_path
-    end
+    @order = Order.find_by(id: params[:order_id])
+    @order.order_status_id = 4
+    @order.save
     redirect_to backoffice_index_path
+
+  end
+
+  def cancel_order
+
+    @order = Order.find_by(id: params[:order_id])
+    @order.order_status_id = 2
+    @order.save
+    redirect_to backoffice_index_path
+
+  end
+
+  def conclude_order
+
+    @order = Order.find_by(id: params[:order_id])
+    @order.order_status_id = 3
+    @order.save
+    redirect_to backoffice_index_path
+
   end
 
   private
