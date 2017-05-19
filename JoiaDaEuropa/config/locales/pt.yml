@@ -56,7 +56,7 @@
   waiting_for_confirmation: "À espera de confirmação para:"
   blank: "(deixe em branco se não pretender alterar)"
   characters_minimum: "caracteres mínimo"
-  pass_confirmation: "Confirme Password"
+  pass_confirm: "Confirme Password"
   cur_pass_confirm:  "(Insira a password atual para confirmar as alterações)"
   cur_pass: "Password Atual"
   update: "Atualizar"
