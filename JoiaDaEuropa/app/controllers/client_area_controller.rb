@@ -90,4 +90,12 @@ class ClientAreaController < ApplicationController
         redirect_to client_area_index_path
 
     end
+
+    private
+
+    def authorized?
+        unless current_user.is_client
+            redirect_to backoffice_index_path and return
+        end
+    end
 end
