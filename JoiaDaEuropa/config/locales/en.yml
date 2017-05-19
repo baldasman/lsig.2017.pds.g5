@@ -85,6 +85,9 @@ en:
   select_file: "Select File"
   observations: "Observations"
 
+  search_for: "Search for:"
+
+
   pend_ord: "Pending Orders"
   cancel_ord: "Canceled Orders"
   completed_ord: "Completed Orders"

@@ -3,9 +3,8 @@
   <div class="actions" align="right">
     <%= link_to '<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> New Order</button>'.html_safe, client_area_new_order_path %>
     <%= form_tag('/search', method: 'get') do %>
-        <%= label_tag(:q, 'Search for:') %>
         <%= text_field_tag(:q) %>
-        <%= submit_tag('Search') %>
+        <%= submit_tag t('search_for') %>
     <% end %>
   </div>
   <ul class="nav nav-tabs">

@@ -83,6 +83,8 @@
   select_file: "Selecione Ficheiro"
   observations: "Observações"
 
+  search_for: "Pesquisar"
+
   pend_ord: "Encomendas Pendentes"
   cancel_ord: "Encomendas Canceladas"
   completed_ord: "Encomendas Completas"
