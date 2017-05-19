@@ -28,6 +28,7 @@
     pending: "Pendente"
     cancelled: "Cancelada"
     completed: "Concluída"
+    approved: "Aprovada"
   save: "Guardar"
   cancel: "Cancelar"
   delete: "Eliminar"
@@ -96,8 +97,12 @@
 
   new_ord: "Nova Encomenda"
   invoice_ref: "Referêcia da Fatura"
-
+  attach: "Anexo"
 
 ##backoffice
   orders: "Encomendas"
   appr_ord: "Encomendas Aprovadas"
+  accept: "Aceitar"
+  conclude: "Concluir"
+  canceling_order: "Porque é que deseja cancelar esta encomenda?"
+  confirm: "Confirmar"

@@ -35,7 +35,7 @@
             </td>
             <td>
                 <% if @order.order_file %>
-                <a href="/uploads/<%= @order.order_file.path %>" target="_blank">Anexo</a>
+                <a href="/uploads/<%= @order.order_file.path %>" target="_blank"><%= t('attach') %></a>
                 <% end %>
             </td>
             <td><%= @order.obs %></td>
@@ -44,13 +44,21 @@
         </table>
       </div>
 
-      <div class="actions">
+      <div class="actions" align="center">
+        <% @orders = Order.where(id: @order.id) %>
+        <% if @orders.find_by(order_status_id: [3, 4]) %>
         <!-- Delete button -->
-        <%= link_to t('delete'), client_area_destroy_order_path(order_id: @order.id), method: :post, class: 'btn btn-danger' %>
-        <!-- Edit button -->
-        <%= link_to t('edit'), client_area_edit_order_path(order_id: @order.id), class: 'btn btn-primary' %>
+        <%= link_to t('delete'), client_area_destroy_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja eliminar esta encomenda?'}, class: 'btn btn-danger' %>
         <!-- Back button -->
         <%= link_to t('back'), client_area_index_path, class: 'btn btn-default' %>
+        <% else %>
+        <!-- Edit button -->
+        <%= link_to t('edit'), client_area_edit_order_path(order_id: @order.id), class: 'btn btn-primary' %>
+        <!-- Delete button -->
+        <%= link_to t('delete'), client_area_destroy_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja eliminar esta encomenda?'}, class: 'btn btn-danger' %>
+        <!-- Back button -->
+        <%= link_to t('back'), client_area_index_path, class: 'btn btn-default' %>
+        <% end %>
       </div>
 
 </div>

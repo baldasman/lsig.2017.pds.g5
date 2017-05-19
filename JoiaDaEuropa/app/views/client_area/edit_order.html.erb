@@ -31,7 +31,7 @@
           </thead>
           <tbody>
           <tr>
-            <td><input type="file" class="file"></td>
+            <td><%= f.file_field :file %></td>
             <td><%= f.text_area :obs %></td>
           </tr>
           </tbody>
@@ -39,10 +39,9 @@
       </div>
 
       <div class="actions" align="center">
-        <%= f.submit t('save') %>
-
+        <%= f.submit t('save'), class: 'btn btn-primary' %>
         <!-- Cancel button -->
-        <%= link_to t('cancel'), client_area_view_order_path(@order.id) %>
+        <%= link_to t('cancel'), client_area_view_order_path(@order.id), class: 'btn btn-default' %>
       </div>
 
 

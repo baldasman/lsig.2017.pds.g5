@@ -1,10 +1,12 @@
 <div class="container">
   <h2><%= t('orders') %></h2>
-  <div class="actions" align="right">
-    <%= form_tag('/search', method: 'get') do %>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag t('search_for') %>
-    <% end %>
+  <div class="container">
+    <div class="actions pull-right">
+      <%= form_tag(backoffice_index_path, method: 'get') do %>
+          <%= text_field_tag(:q, @search, autofocus: true, placeholder: t('search_for')) %>
+          <%= submit_tag t('search_for') %>
+      <% end %>
+    </div>
   </div>
   <ul class="nav nav-tabs">
     <li><a data-toggle="tab" href="#menu1"><%= t('pend_ord') %></a></li>

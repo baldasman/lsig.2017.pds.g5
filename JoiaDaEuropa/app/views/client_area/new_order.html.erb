@@ -39,10 +39,8 @@
   </div>
 
   <div class="actions" align="center">
-  <%= f.submit t('save') %>
-
-
-    <%= button_to t('cancel'), client_area_index_path %>
+  <%= f.submit t('save') , class: 'btn btn-primary', data: {confirm: 'Tem a certeza que deseja submeter esta encomenda?'} %>
+    <%= link_to t('cancel'), client_area_index_path, class: 'btn btn-default' %>
   </div>
 
 

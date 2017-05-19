@@ -28,6 +28,7 @@ en:
     pending: "Pending"
     cancelled: "Cancelled"
     completed: "Concluded"
+    approved: "Approved"
   save: "Save"
   cancel: "Cancel"
   delete: "Delete"
@@ -99,8 +100,13 @@ en:
 
   new_ord: "New Order"
   invoice_ref: "Invoice Reference"
+  attach: "Attachment"
 
   ##backoffice
 
   orders: "Orders"
   appr_ord: "Approved Orders"
+  accept: "Accept"
+  conclude: "Conclude"
+  canceling_order: "Why do you want to cancel this order"
+  confirm: "Confirm"

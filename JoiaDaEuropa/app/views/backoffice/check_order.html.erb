@@ -48,13 +48,13 @@
     <% @orders = Order.where(id: @order.id) %>
     <% if @orders.find_by(order_status_id: '1') %>
         <!-- Accept button -->
-        <%= link_to 'Accept', backoffice_approve_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja aprovar esta encomenda?'}, class: 'btn btn-primary' %>
+        <%= link_to t('accept'), backoffice_approve_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja aprovar esta encomenda?'}, class: 'btn btn-primary' %>
         <!-- Cancel button -->
         <%= link_to t('cancel'), backoffice_cancel_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja cancelar esta encomenda?'}, class: 'btn btn-danger' %>
     <%end %>
     <% if @orders.find_by(order_status_id: '4') %>
         <!-- Conclude button -->
-        <%= link_to 'Conclude', backoffice_conclude_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja concluir esta encomenda?'}, class: 'btn btn-primary' %>
+        <%= link_to t('conclude'), backoffice_conclude_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja concluir esta encomenda?'}, class: 'btn btn-primary' %>
     <%end %>
         <!-- Back button -->
         <%= link_to t('back'), backoffice_index_path, class: 'btn btn-default' %>

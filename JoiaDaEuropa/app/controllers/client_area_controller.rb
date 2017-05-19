@@ -42,6 +42,16 @@ class ClientAreaController < ApplicationController
 
         @order = Order.find_by(id: params[:order_id])
 
+        # upload file
+        _upload = _order[:file]
+        _filename = SecureRandom.hex + '_' + _upload.original_filename
+
+        @order.order_file = OrderFile.new path: _filename
+
+        File.open(Rails.root.join('public', 'uploads', _filename), 'wb') do |file|
+            file.write(_upload.read)
+        end
+
     end
 
     def save_order
@@ -59,6 +69,7 @@ class ClientAreaController < ApplicationController
         @order.delivery_date = _order[:delivery_date]
         @order.obs = _order[:obs]
         @order.reference_id = _order[:reference_id]
+        @order.order_date = Time.now
 
 
         # upload file
@@ -95,7 +106,7 @@ class ClientAreaController < ApplicationController
 
     def authorized?
         unless current_user.is_client
-            redirect_to backoffice_index_path and return
+            redirect_to backoffice_index_path && return
         end
     end
 end
